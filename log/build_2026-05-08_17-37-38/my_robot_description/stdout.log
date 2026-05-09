@@ -1,0 +1,9 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/fizzer/my_robot_ws/build/my_robot_description
+-- Install configuration: ""
+-- Up-to-date: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//urdf
+-- Up-to-date: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//urdf/my_robot.urdf.xacro
+-- Up-to-date: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//rviz
+-- Up-to-date: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//rviz/rviz
