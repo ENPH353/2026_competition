@@ -7,6 +7,9 @@
     <xacro:property name="wheel_radius" value="0.1" /> 
     <xacro:property name="wheel_length" value="0.05" />
 
+    <xacro:include filename="$(find my_robot_description)/urdf/common_properties.xacro" />
+    <xacro:include filename="$(find my_robot_description)/urdf/mobile_base_gazebo.xacro" />
+
     <material name="green">
         <color rgba="0 0.6 0 1" />
     </material>
@@ -17,6 +20,16 @@
 
 
     <link name="base_link">
+        <xacro:box_inertia m="5.0" x="${base_length}" y="${base_width}" z="${base_height}" 
+        o_xyz="0 0 ${base_height / 2.0}" o_rpy="0 0 0" />
+
+        <collision>
+            <origin xyz="0 0 ${base_height / 2.0}" rpy="0 0 0" />
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}" />
+            </geometry>
+        </collision>
+
         <visual>
             <geometry>
                 <box size="${base_length} ${base_width} ${base_height}" />
@@ -27,6 +40,9 @@
     </link>
 
     <link name="shoulder_link">
+        <xacro:cylinder_inertia m="1.0" r="0.1" l="0.3" 
+        o_xyz="0 0 0.15" o_rpy="0 0 0" />
+
         <visual>
             <geometry>
                 <cylinder radius="0.1" length="0.3" />
@@ -37,6 +53,16 @@
     </link>
 
     <link name="right_wheel_link">
+        <xacro:cylinder_inertia m="1.0" r="${wheel_radius}" l="${wheel_length}" 
+        o_xyz="0 0 0" o_rpy="${pi / 2.0} 0 0" />
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="${wheel_radius}" />
+            </geometry>
+        </collision>
+
         <visual>
             <geometry>
                 <cylinder radius="${wheel_radius}" length="${wheel_length}" />
@@ -47,6 +73,16 @@
     </link>
 
     <link name="left_wheel_link">
+        <xacro:cylinder_inertia m="1.0" r="${wheel_radius}" l="${wheel_length}" 
+        o_xyz="0 0 0" o_rpy="${pi / 2.0} 0 0" />
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="${wheel_radius}" />
+            </geometry>
+        </collision>
+
         <visual>
             <geometry>
                 <cylinder radius="${wheel_radius}" length="${wheel_length}" />
@@ -57,6 +93,15 @@
     </link>
 
     <link name="caster_wheel_link">
+        <xacro:sphere_inertia m="0.5" r="${wheel_radius / 2.0}"  o_xyz="0 0 0" o_rpy="0 0 0" />
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="${wheel_radius / 2.0}" />
+            </geometry>
+        </collision>
+
         <visual>
             <geometry>
                 <sphere radius="${wheel_radius / 2.0}" />
