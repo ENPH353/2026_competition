@@ -1,5 +1,7 @@
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot.launch.xml
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//config/gazebo_bridge.yaml
+/home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/fast_empty.sdf
+/home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/textures/monza.png
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/ament_index/resource_index/package_run_dependencies/my_robot_bringup
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/ament_index/resource_index/parent_prefix_path/my_robot_bringup
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.sh

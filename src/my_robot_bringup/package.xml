@@ -19,5 +19,6 @@
 
   <export>
     <build_type>ament_cmake</build_type>
+    <gz_sim_resource_path path="world"/> <!--Lets the simulation know that this folder contains resources-->
   </export>
 </package>

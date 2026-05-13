@@ -1,12 +1,12 @@
 <launch>
 
     <let name="urdf_path" value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro" />
-    <let name="sdf_path" value="$(find-pkg-share my_robot_bringup)/launch/fast_empty.sdf" />
+    <let name="sdf_path" value="$(find-pkg-share my_robot_bringup)/world/fast_empty.sdf" />
     <let name="gazebo_config_path" value="$(find-pkg-share my_robot_bringup)/config/gazebo_bridge.yaml" />
 
     <include
         file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
-        <arg name="gz_args" value="sdf_path -r" />
+        <arg name="gz_args" value="$(var sdf_path) -r" />
     </include>
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
