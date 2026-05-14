@@ -1,0 +1,48 @@
+[0.019s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/my_robot_bringup -- -j4 -l4
+[0.067s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.407s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.525s] Error parsing '/home/fizzer/my_robot_ws/src/my_robot_bringup/package.xml':
+[3.227s] Traceback (most recent call last):
+[3.227s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string
+[3.227s]     root = dom.parseString(data)
+[3.227s]            ^^^^^^^^^^^^^^^^^^^^^
+[3.228s]   File "/usr/lib/python3.12/xml/dom/minidom.py", line 1995, in parseString
+[3.229s]     return expatbuilder.parseString(string)
+[3.229s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[3.229s]   File "/usr/lib/python3.12/xml/dom/expatbuilder.py", line 922, in parseString
+[3.230s]     return builder.parseString(string)
+[3.230s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[3.230s]   File "/usr/lib/python3.12/xml/dom/expatbuilder.py", line 220, in parseString
+[3.230s]     parser.Parse(string, True)
+[3.230s] xml.parsers.expat.ExpatError: not well-formed (invalid token): line 22, column 34
+[3.230s] 
+[3.230s] During handling of the above exception, another exception occurred:
+[3.230s] 
+[3.231s] Traceback (most recent call last):
+[3.231s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[3.232s]     main()
+[3.232s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[3.232s]     raise e
+[3.233s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[3.233s]     package = parse_package_string(
+[3.233s]               ^^^^^^^^^^^^^^^^^^^^^
+[3.233s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string
+[3.234s]     raise InvalidPackage('The manifest contains invalid XML:\n%s' % ex, filename)
+[3.234s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/fizzer/my_robot_ws/src/my_robot_bringup/package.xml':
+[3.234s] The manifest contains invalid XML:
+[3.235s] not well-formed (invalid token): line 22, column 34
+[3.284s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[3.284s]   execute_process(/usr/bin/python3
+[3.284s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[3.284s]   /home/fizzer/my_robot_ws/src/my_robot_bringup/package.xml
+[3.284s]   /home/fizzer/my_robot_ws/build/my_robot_bringup/ament_cmake_core/package.cmake)
+[3.284s]   returned error code 1
+[3.284s] Call Stack (most recent call first):
+[3.285s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[3.285s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+[3.285s]   CMakeLists.txt:25 (ament_lint_auto_find_test_dependencies)
+[3.285s] 
+[3.285s] [0m
+[3.285s] -- Configuring incomplete, errors occurred!
+[3.288s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[3.290s] Invoked command in '/home/fizzer/my_robot_ws/build/my_robot_bringup' returned '2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/my_robot_bringup -- -j4 -l4

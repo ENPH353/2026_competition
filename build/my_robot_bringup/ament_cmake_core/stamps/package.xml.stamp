@@ -19,6 +19,7 @@
 
   <export>
     <build_type>ament_cmake</build_type>
-    <gz_sim_resource_path path="world"/> <!--Lets the simulation know that this folder contains resources-->
+    <!-- <gazebo_ros gazebo_model_path="${prefix}/share/my_robot_bringup/world"/>
+    <gazebo_ros gazebo_model_path="${prefix}/share/my_robot_bringup/world/models"/> -->
   </export>
 </package>
