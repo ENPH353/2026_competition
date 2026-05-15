@@ -93,7 +93,21 @@
     <include>
     	<uri>model://models/truck_npc</uri>
     	<name>truck_npc</name>
-    	<pose>-1 0 0.2 0 0 0</pose>
+    	<pose>-0.5 0 0.1 0 0 3.14</pose>
+    	<static>false</static>
+    </include>
+
+    <include>
+    	<uri>model://models/baby_yoda_npc</uri>
+    	<name>baby_yoda_npc</name>
+    	<pose>4.3 -0.5 0.1 0 0 0</pose>
+    	<static>false</static>
+    </include>
+
+    <include>
+    	<uri>model://models/pedestrian_npc</uri>
+    	<name>pedestrian_npc</name>
+    	<pose>-4 0 0.3 0 0 0</pose>
     	<static>false</static>
     </include>
 

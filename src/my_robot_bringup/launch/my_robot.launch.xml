@@ -21,4 +21,8 @@
         <param name="config_file"  value="$(var gazebo_config_path)" /> 
     </node>
 
+    <node pkg="bringup_nodes" exec="move_truck" />
+
+    <node pkg="bringup_nodes" exec="move_yoda" />
+
 </launch>

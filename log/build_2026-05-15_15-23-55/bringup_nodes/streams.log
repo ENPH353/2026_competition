@@ -1,0 +1,19 @@
+[1.253s] Invoking command in '/home/fizzer/my_robot_ws/build/bringup_nodes': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fizzer/my_robot_ws/build/bringup_nodes/build --no-deps symlink_data
+[1.694s] running develop
+[1.960s] running egg_info
+[1.994s] writing bringup_nodes.egg-info/PKG-INFO
+[1.995s] writing dependency_links to bringup_nodes.egg-info/dependency_links.txt
+[1.995s] writing entry points to bringup_nodes.egg-info/entry_points.txt
+[1.996s] writing requirements to bringup_nodes.egg-info/requires.txt
+[1.996s] writing top-level names to bringup_nodes.egg-info/top_level.txt
+[2.053s] reading manifest file 'bringup_nodes.egg-info/SOURCES.txt'
+[2.054s] writing manifest file 'bringup_nodes.egg-info/SOURCES.txt'
+[2.082s] running build_ext
+[2.082s] Creating /home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup-nodes.egg-link (link to .)
+[2.082s] Installing move_pedestrian script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[2.083s] Installing move_truck script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[2.083s] Installing move_yoda script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[2.083s] 
+[2.084s] Installed /home/fizzer/my_robot_ws/build/bringup_nodes
+[2.084s] running symlink_data
+[2.116s] Invoked command in '/home/fizzer/my_robot_ws/build/bringup_nodes' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fizzer/my_robot_ws/build/bringup_nodes/build --no-deps symlink_data

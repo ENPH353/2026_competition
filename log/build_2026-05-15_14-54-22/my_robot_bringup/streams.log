@@ -1,0 +1,59 @@
+[0.015s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=/home/fizzer/my_robot_ws/install/my_robot_description:/home/fizzer/my_robot_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/my_robot_bringup -- -j4 -l4
+[0.094s] Invoked command in '/home/fizzer/my_robot_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/fizzer/my_robot_ws/install/my_robot_description:/home/fizzer/my_robot_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/my_robot_bringup -- -j4 -l4
+[0.095s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=/home/fizzer/my_robot_ws/install/my_robot_description:/home/fizzer/my_robot_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fizzer/my_robot_ws/build/my_robot_bringup
+[0.108s] -- Install configuration: ""
+[0.108s] -- Execute custom install script
+[0.109s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot.launch.xml
+[0.110s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//config/gazebo_bridge.yaml
+[0.110s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/fast_empty.sdf
+[0.111s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/assets/baby_yoda.blend
+[0.111s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/assets/baby_yoda.dae
+[0.111s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/assets/baby_yoda_NPC.blend
+[0.111s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/baby_yoda_npc.sdf
+[0.112s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/model.config
+[0.112s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/eyebrow001-unmodified.png
+[0.125s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/eyebrow001.png
+[0.139s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/green_eye.png
+[0.152s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/jeans01_normals.png
+[0.166s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/jeans_basic_diffuse.png
+[0.179s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/male02_diffuse_black-unmodified.png
+[0.193s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/male02_diffuse_black.png
+[0.206s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/teeth.png
+[0.219s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/tshirt02_normals.png
+[0.231s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/tshirt02_texture.png
+[0.243s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/walking.dae
+[0.255s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/assets/young_lightskinned_male_diffuse.png
+[0.269s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/model.config
+[0.281s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/pedestrian_npc/pedestrian_npc.sdf
+[0.295s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/terrain/assets/2023_Competition_Driving_Surface_v0.2.png
+[0.295s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/terrain/assets/Terrain_2023_v2.dae
+[0.295s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/terrain/model.config
+[0.296s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/terrain/terrain.sdf
+[0.296s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/truck_npc/assets/pickup.dae
+[0.297s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/truck_npc/assets/pickup_diffuse.jpg
+[0.297s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/truck_npc/assets/wheels2.jpg
+[0.297s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/truck_npc/model.config
+[0.297s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/truck_npc/truck_npc.sdf
+[0.298s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/wall_long/extended_forest.png
+[0.299s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/wall_long/model.config
+[0.299s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/wall_long/wall_long.sdf
+[0.299s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/wall_short/forest.png
+[0.300s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/wall_short/model.config
+[0.300s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/wall_short/wall_short.sdf
+[0.300s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/textures/monza.png
+[0.300s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/ament_index/resource_index/package_run_dependencies/my_robot_bringup
+[0.301s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/ament_index/resource_index/parent_prefix_path/my_robot_bringup
+[0.301s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.sh
+[0.301s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.dsv
+[0.301s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/environment/path.sh
+[0.302s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/environment/path.dsv
+[0.302s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.bash
+[0.302s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.sh
+[0.302s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.zsh
+[0.303s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.dsv
+[0.303s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/package.dsv
+[0.312s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/ament_index/resource_index/packages/my_robot_bringup
+[0.313s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig.cmake
+[0.313s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig-version.cmake
+[0.313s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup/package.xml
+[0.316s] Invoked command in '/home/fizzer/my_robot_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/fizzer/my_robot_ws/install/my_robot_description:/home/fizzer/my_robot_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fizzer/my_robot_ws/build/my_robot_bringup

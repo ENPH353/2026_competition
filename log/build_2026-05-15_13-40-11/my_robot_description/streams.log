@@ -1,0 +1,6 @@
+[0.021s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/my_robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/install/my_robot_description
+[0.063s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.423s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.590s] -- Configuring done (0.5s)
+[0.596s] -- Generating done (0.0s)
+[0.600s] -- Build files have been written to: /home/fizzer/my_robot_ws/build/my_robot_description

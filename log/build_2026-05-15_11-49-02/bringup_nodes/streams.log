@@ -1,0 +1,17 @@
+[0.603s] Invoking command in '/home/fizzer/my_robot_ws/build/bringup_nodes': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fizzer/my_robot_ws/build/bringup_nodes/build --no-deps symlink_data
+[0.827s] running develop
+[0.966s] running egg_info
+[0.980s] writing bringup_nodes.egg-info/PKG-INFO
+[0.980s] writing dependency_links to bringup_nodes.egg-info/dependency_links.txt
+[0.980s] writing entry points to bringup_nodes.egg-info/entry_points.txt
+[0.981s] writing requirements to bringup_nodes.egg-info/requires.txt
+[0.981s] writing top-level names to bringup_nodes.egg-info/top_level.txt
+[1.008s] reading manifest file 'bringup_nodes.egg-info/SOURCES.txt'
+[1.008s] writing manifest file 'bringup_nodes.egg-info/SOURCES.txt'
+[1.023s] running build_ext
+[1.023s] Creating /home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup-nodes.egg-link (link to .)
+[1.023s] Installing move_truck script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[1.023s] 
+[1.023s] Installed /home/fizzer/my_robot_ws/build/bringup_nodes
+[1.024s] running symlink_data
+[1.043s] Invoked command in '/home/fizzer/my_robot_ws/build/bringup_nodes' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fizzer/my_robot_ws/build/bringup_nodes/build --no-deps symlink_data

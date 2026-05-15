@@ -9,8 +9,14 @@ setup.py
 ../../build/bringup_nodes/bringup_nodes.egg-info/top_level.txt
 ../../build/bringup_nodes/bringup_nodes.egg-info/zip-safe
 bringup_nodes/__init__.py
+bringup_nodes/baby_yoda_circuit.py
+bringup_nodes/pedestrian_circuit.py
 bringup_nodes/truck_circuit.py
+bringup_nodes.egg-info/PKG-INFO
+bringup_nodes.egg-info/SOURCES.txt
+bringup_nodes.egg-info/dependency_links.txt
+bringup_nodes.egg-info/entry_points.txt
+bringup_nodes.egg-info/requires.txt
+bringup_nodes.egg-info/top_level.txt
+bringup_nodes.egg-info/zip-safe
 resource/bringup_nodes
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

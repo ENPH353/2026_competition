@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="pedestrian_npc">
+        <static>false</static>
+        <link name="pedestrian_npc_link">
+            <inertial>
+                <mass>1000</mass>
+                <inertia>
+                    <ixx>0.433</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.433</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.433</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <pose>0 0 0.06545 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.0385 0.0616 0.1309</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name="visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>assets/walking.dae</uri>
+                        <scale>0.07 0.07 0.07</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        <!-- Set up to recieve cmd_vel messages -->
+        <plugin filename="gz-sim-velocity-control-system"
+            name="gz::sim::systems::VelocityControl">
+            <link_name>pedestrian_npc_link</link_name>
+        </plugin>
+
+        <plugin filename="gz-sim-pose-publisher-system"
+            name="gz::sim::systems::PosePublisher">
+
+            <publish_model_pose>true</publish_model_pose>
+            <publish_link_pose>false</publish_link_pose>
+            <publish_sensor_pose>false</publish_sensor_pose>
+            <publish_collision_pose>false</publish_collision_pose>
+            <publish_visual_pose>false</publish_visual_pose>
+            
+            <update_frequency>20</update_frequency>
+            
+            <use_pose_vector_msg>false</use_pose_vector_msg>
+            
+        </plugin>
+    </model>
+</sdf>

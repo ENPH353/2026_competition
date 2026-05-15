@@ -1,0 +1,21 @@
+[1.244s] Invoking command in '/home/fizzer/my_robot_ws/src/bringup_nodes': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bringup_nodes build --build-base /home/fizzer/my_robot_ws/build/bringup_nodes/build install --record /home/fizzer/my_robot_ws/build/bringup_nodes/install.log --single-version-externally-managed install_data
+[1.614s] running egg_info
+[1.642s] writing ../../build/bringup_nodes/bringup_nodes.egg-info/PKG-INFO
+[1.642s] writing dependency_links to ../../build/bringup_nodes/bringup_nodes.egg-info/dependency_links.txt
+[1.642s] writing entry points to ../../build/bringup_nodes/bringup_nodes.egg-info/entry_points.txt
+[1.643s] writing requirements to ../../build/bringup_nodes/bringup_nodes.egg-info/requires.txt
+[1.643s] writing top-level names to ../../build/bringup_nodes/bringup_nodes.egg-info/top_level.txt
+[1.698s] reading manifest file '../../build/bringup_nodes/bringup_nodes.egg-info/SOURCES.txt'
+[1.698s] writing manifest file '../../build/bringup_nodes/bringup_nodes.egg-info/SOURCES.txt'
+[1.699s] running build
+[1.699s] running build_py
+[1.699s] running install
+[1.708s] running install_lib
+[1.735s] running install_data
+[1.735s] running install_egg_info
+[1.764s] removing '/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup_nodes-0.0.0-py3.12.egg-info' (and everything under it)
+[1.766s] Copying ../../build/bringup_nodes/bringup_nodes.egg-info to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup_nodes-0.0.0-py3.12.egg-info
+[1.767s] running install_scripts
+[1.952s] Installing move_truck script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[1.952s] writing list of installed files to '/home/fizzer/my_robot_ws/build/bringup_nodes/install.log'
+[1.985s] Invoked command in '/home/fizzer/my_robot_ws/src/bringup_nodes' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bringup_nodes build --build-base /home/fizzer/my_robot_ws/build/bringup_nodes/build install --record /home/fizzer/my_robot_ws/build/bringup_nodes/install.log --single-version-externally-managed install_data

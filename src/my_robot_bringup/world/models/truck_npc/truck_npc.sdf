@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
-    <model name="terrain">
+    <model name="truck_npc">
         <static>false</static>
-        <link name="terrain_link">
+        <link name="truck_npc_link">
             <inertial>
-                <mass>0.9</mass>
+                <mass>1000</mass>
                 <inertia>
-                    <ixx>0.0054018</ixx>
+                    <ixx>100</ixx>
                     <ixy>0.0</ixy>
                     <ixz>0.0</ixz>
-                    <iyy>0.0014490</iyy>
+                    <iyy>100</iyy>
                     <iyz>0.0</iyz>
-                    <izz>0.0058010</izz>
+                    <izz>100</izz>
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose>0 0 0 0 0 -1.57</pose>
+                <pose>0 0 0 0 0 -1.57079632679</pose>
                 <geometry>
                     <mesh>
                         <uri>assets/pickup.dae</uri>
@@ -25,7 +25,7 @@
             </collision>
 
             <visual name="visual">
-                <pose>0 0 0 0 0 -1.57</pose>
+                <pose>0 0 0 0 0 -1.57079632679</pose>
                 <geometry>
                     <mesh>
                         <uri>assets/pickup.dae</uri>
@@ -49,7 +49,7 @@
             <publish_collision_pose>false</publish_collision_pose>
             <publish_visual_pose>false</publish_visual_pose>
             
-            <update_frequency>50</update_frequency>
+            <update_frequency>20</update_frequency>
             
             <use_pose_vector_msg>false</use_pose_vector_msg>
             

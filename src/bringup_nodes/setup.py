@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "move_truck = bringup_nodes.truck_circuit:main"
+            "move_truck = bringup_nodes.truck_circuit:main",
+            "move_yoda = bringup_nodes.baby_yoda_circuit:main",
+            "move_pedestrian = bringup_nodes.pedestrian_circuit:main"
         ],
     },
 )

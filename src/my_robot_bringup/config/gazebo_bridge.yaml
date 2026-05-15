@@ -38,3 +38,32 @@
   gz_topic_name: "/model/truck_npc/pose"
   ros_type_name: "geometry_msgs/msg/PoseStamped"
   gz_type_name: "gz.msgs.Pose"
+  direction: GZ_TO_ROS
+
+# Yoda velocity
+- ros_topic_name: "/baby_yoda/cmd_vel"
+  gz_topic_name: "/model/baby_yoda_npc/cmd_vel"  
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# Yoda pose
+- ros_topic_name: "/baby_yoda/pose"
+  gz_topic_name: "/model/baby_yoda_npc/pose"
+  ros_type_name: "geometry_msgs/msg/PoseStamped"
+  gz_type_name: "gz.msgs.Pose"
+  direction: GZ_TO_ROS
+
+# Pedestrian velocity
+- ros_topic_name: "/pedestrian/cmd_vel"
+  gz_topic_name: "/model/pedestrian_npc/cmd_vel"  
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# Pedestrian pose
+- ros_topic_name: "/pedestrian/pose"
+  gz_topic_name: "/model/pedestrian_npc/pose"
+  ros_type_name: "geometry_msgs/msg/PoseStamped"
+  gz_type_name: "gz.msgs.Pose"
+  direction: GZ_TO_ROS
