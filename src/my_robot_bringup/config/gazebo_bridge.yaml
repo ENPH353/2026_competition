@@ -20,8 +20,21 @@
   direction: GZ_TO_ROS
 
 # Camera
-- ros_topic_name: "camera/image_raw"
+- ros_topic_name: "/camera/image_raw"
   gz_topic_name: "/camera/image_raw"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
+
+# Truck velocity
+- ros_topic_name: "/truck/cmd_vel"
+  gz_topic_name: "/model/truck_npc/cmd_vel"  
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# Truck pose
+- ros_topic_name: "/truck/pose"
+  gz_topic_name: "/model/truck_npc/pose"
+  ros_type_name: "geometry_msgs/msg/PoseStamped"
+  gz_type_name: "gz.msgs.Pose"

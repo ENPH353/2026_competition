@@ -1,1 +1,36 @@
-/home/fizzer/my_robot_ws/src/my_robot_bringup/world/models/wall_short/wall_short.sdf
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="wall_short">
+        <static>true</static>
+        <link name="wall_short_link">
+            <collision name="collision">
+                <geometry>
+                    <plane>
+                        <normal>0 0 1</normal>
+                        <size>5.5 0.5</size>
+                    </plane>
+                </geometry>
+            </collision>
+
+            <visual name="visual">
+                <geometry>
+                    <plane>
+                        <normal>0 0 1</normal>
+                        <size>5.5 0.5</size>
+                    </plane>
+                </geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+
+                    <pbr>
+                        <metal>
+                            <albedo_map>forest.png</albedo_map>
+                        </metal>
+                    </pbr>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

@@ -1,0 +1,2 @@
+[console_scripts]
+move_truck = bringup_nodes.truck_circuit:main

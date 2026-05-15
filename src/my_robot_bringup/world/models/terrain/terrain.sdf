@@ -10,6 +10,14 @@
                         <scale>12.0 12.0 12.0</scale>
                     </mesh>
                 </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>100</mu>
+                            <mu2>100</mu2>
+                        </ode>
+                    </friction>
+                </surface>
             </collision>
 
             <visual name="visual">

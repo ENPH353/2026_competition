@@ -1,0 +1,19 @@
+[1.725s] Invoking command in '/home/fizzer/my_robot_ws/build/bringup_nodes': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fizzer/my_robot_ws/build/bringup_nodes/build --no-deps symlink_data --force
+[2.456s] running develop
+[2.795s] running egg_info
+[2.828s] writing bringup_nodes.egg-info/PKG-INFO
+[2.831s] writing dependency_links to bringup_nodes.egg-info/dependency_links.txt
+[2.831s] writing entry points to bringup_nodes.egg-info/entry_points.txt
+[2.832s] writing requirements to bringup_nodes.egg-info/requires.txt
+[2.832s] writing top-level names to bringup_nodes.egg-info/top_level.txt
+[2.904s] reading manifest file 'bringup_nodes.egg-info/SOURCES.txt'
+[2.906s] writing manifest file 'bringup_nodes.egg-info/SOURCES.txt'
+[2.955s] running build_ext
+[2.955s] Creating /home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup-nodes.egg-link (link to .)
+[2.955s] Installing move_truck script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[2.956s] 
+[2.956s] Installed /home/fizzer/my_robot_ws/build/bringup_nodes
+[2.957s] running symlink_data
+[2.957s] symbolically linking /home/fizzer/my_robot_ws/build/bringup_nodes/resource/bringup_nodes -> /home/fizzer/my_robot_ws/install/bringup_nodes/share/ament_index/resource_index/packages
+[2.957s] symbolically linking /home/fizzer/my_robot_ws/build/bringup_nodes/package.xml -> /home/fizzer/my_robot_ws/install/bringup_nodes/share/bringup_nodes
+[3.004s] Invoked command in '/home/fizzer/my_robot_ws/build/bringup_nodes' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fizzer/my_robot_ws/build/bringup_nodes/build --no-deps symlink_data --force
