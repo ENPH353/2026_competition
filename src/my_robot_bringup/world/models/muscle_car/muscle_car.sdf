@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="tree_fr">
+        <static>true</static>
+        <link name="tree_fir_link">
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>muscle_car.dae</uri>
+                        <scale>0.01 0.01 0.01</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>muscle_car.dae</uri>
+                        <scale>0.05 0.05 0.05</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>

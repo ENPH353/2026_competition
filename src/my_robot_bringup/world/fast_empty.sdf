@@ -88,6 +88,16 @@
 
     <!-- TERRAIN END -->
 
+    <!-- CAR START -->
+
+    <include>
+      <uri>model://models/muscle_car</uri>
+      <static>true</static>
+      <pose>4.14 2.56 0 0 0 -1.57</pose>
+    </include>
+
+    <!-- CAR END -->
+
     <!-- NPC START -->
 
     <include>
@@ -112,6 +122,161 @@
     </include>
 
     <!-- NPC END -->
+
+    <!-- WATER START -->
+
+    <include>
+      <uri>model://models/water</uri>
+      <name>water</name>
+      <static>true</static>
+      <pose>1.56 -1.64 -0.15 0 0 0</pose>
+    </include>
+
+    <!-- WATER END -->
+
+    <!-- TUNNEL START -->
+
+    <include>
+      <uri>model://models/tunnel</uri>
+      <name>tunnel</name>
+      <static>true</static>
+      <pose>3.2 2.3 0.29 0 0.46 0</pose>
+    </include>
+
+    <!-- TUNNEL END -->
+
+    <!-- TREES START -->
+
+    <include>
+      <uri>model://models/tree_poly</uri>
+      <name>tree_poly</name>
+      <static>true</static>
+      <pose>-2.5 1.5 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_01</name>
+      <static>true</static>
+      <pose>-2.8 -0.4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_02</name>
+      <static>true</static>
+      <pose>-3 -1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_03</name>
+      <static>true</static>
+      <pose>-3 -2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_04</name>
+      <static>true</static>
+      <pose>-2.8 -2.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_05</name>
+      <static>true</static>
+      <pose>-1 -1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_06</name>
+      <static>true</static>
+      <pose>-2 -1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_07</name>
+      <static>true</static>
+      <pose>-2 -1.8 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_08</name>
+      <static>true</static>
+      <pose>-1 -1.8 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_09</name>
+      <static>true</static>
+      <pose>-0.2 -0.8 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_10</name>
+      <static>true</static>
+      <pose>0 -2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_11</name>
+      <static>true</static>
+      <pose>-0.92 0.92 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_oak</uri>
+      <name>tree_oak_12</name>
+      <static>true</static>
+      <pose>0.92 0.92 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_01</name>
+      <static>true</static>
+      <pose>-5 -2.0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_02</name>
+      <static>true</static>
+      <pose>-4.2 -1.4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_03</name>
+      <static>true</static>
+      <pose>-5 -0.9 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_04</name>
+      <static>true</static>
+      <pose>-5 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_05</name>
+      <static>true</static>
+      <pose>-4.1 0.3 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_06</name>
+      <static>true</static>
+      <pose>-5 1.8 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_07</name>
+      <static>true</static>
+      <pose>-5 0.9 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/tree_fir</uri>
+      <name>fir_tree_08</name>
+      <static>true</static>
+      <pose>-1 1.8 0 0 0 0</pose>
+    </include>
+
+    <!-- TREES END -->
   
 
   </world>

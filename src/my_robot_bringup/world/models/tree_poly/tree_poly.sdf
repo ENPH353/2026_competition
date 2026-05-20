@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="tree_poly">
+        <static>true</static>
+        <link name="tree_poly_link">
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>tree_poly.dae</uri>
+                        <scale>0.1 0.1 0.1</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="visual">
+                <pose>0 0 0 1.57 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>tree_poly.dae</uri>
+                        <scale>32 32 32</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>

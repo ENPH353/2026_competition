@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="water">
+        <static>true</static>
+        <link name="water_link">
+            <collision name='collision'>
+                <pose>0 0 0.04 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.2 0.01 0.16</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>3 2.25 0.2</size>
+                    </box>
+                </geometry>
+                <transparency> 0.5 </transparency>
+                <material>
+                    <ambient>0 0 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>0 0.5 0 0</specular>
+                    <emissive>0 0 0 1</emissive>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>
