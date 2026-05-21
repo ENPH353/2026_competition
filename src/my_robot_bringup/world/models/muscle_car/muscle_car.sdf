@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
-    <model name="tree_fr">
+    <model name="muscle_car">
         <static>true</static>
-        <link name="tree_fir_link">
+        <link name="muscle_car_link">
             <collision name="collision">
                 <geometry>
                     <mesh>
