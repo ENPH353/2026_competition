@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
     <model name="wind_sock">
-        <static>false</static>
-        <link name="roof">
+      <static>false</static>
+      <link name="roof">
         <pose>0 0 0.5 0 0 0</pose>
         <collision name="collision">
           <geometry>
@@ -11,12 +11,12 @@
             </box>
           </geometry>
           <surface>
-            <friction>
+            <!-- <friction>
               <ode>
                 <mu>0.1</mu>
                 <mu2>0</mu2>
               </ode>
-            </friction>
+            </friction> -->
           </surface>
         </collision>
       </link>

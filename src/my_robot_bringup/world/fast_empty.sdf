@@ -32,6 +32,9 @@
       <render_engine>ogre</render_engine>
     </plugin>
 
+    <plugin filename="gz-sim-apply-link-wrench-system" name="gz::sim::systems::ApplyLinkWrench">
+    </plugin>
+
     <!-- Wind plugin -->
     
     <plugin
@@ -47,10 +50,10 @@
           </sin>
         </magnitude>
         <direction>
-          <time_for_rise>0.01</time_for_rise> <!-- Dampening-->
+          <time_for_rise>0.01</time_for_rise> <!-- Force response dampening-->
           <sin>
-            <amplitude>137</amplitude> <!-- oscillation in degrees-->
-            <period>6</period>
+            <amplitude>137</amplitude> <!-- deviation from cardinal wind direction in degrees-->
+            <period>10</period>
           </sin>
         </direction>
       </horizontal>
@@ -58,7 +61,7 @@
 
 
     <wind>
-      <linear_velocity>0 1.5 0</linear_velocity>
+      <linear_velocity>0 1 0</linear_velocity> <!-- cardinal wind direction -->
     </wind>
 
     <!-- THE KEY SECTION FOR SHADOWS -->
@@ -77,16 +80,15 @@
     </light>
 
     <!-- Test block -->
-    <!-- <model name="flying_block">
+    <model name="flying_block">
       <static>false</static>
       <pose>-1 0 3 0 0 0</pose>
       <enable_wind>true</enable_wind>
 
       <link name="flying_block_link">
         <gravity>false</gravity>
-        <enable_wind>true</enable_wind>
         <inertial>
-          <mass>0.01</mass>
+          <mass>5.0</mass>
           <inertia>
             <ixx>0.000066667</ixx>
             <ixy>0.0</ixy>
@@ -114,7 +116,7 @@
         </collision>
 
       </link>
-    </model> -->
+    </model>
 
     <!-- WALLS START -->
     <include>

@@ -1,3 +1,4 @@
+/home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot.launch.py
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot.launch.xml
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//config/gazebo_bridge.yaml
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/fast_empty.sdf
@@ -6,6 +7,7 @@
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/assets/baby_yoda_NPC.blend
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/baby_yoda_npc.sdf
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/baby_yoda_npc/model.config
+/home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/clue_board/clue_board.sdf
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/muscle_car/model.config
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/muscle_car/muscle_car.dae
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/models/muscle_car/muscle_car.sdf
