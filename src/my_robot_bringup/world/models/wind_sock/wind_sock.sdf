@@ -1,32 +1,52 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
     <model name="wind_sock">
+      <!-- Force Gazebo to ignore collisions between links in this specific model -->
+      <self_collide>false</self_collide>
       <static>false</static>
-      <link name="roof">
-        <pose>0 0 0.5 0 0 0</pose>
+      
+      <!-- Anchor moved up to Z=1.97 -->
+      <link name="anchor">
+        <pose>0 0 1.97 0 0 0</pose>
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.00087</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.00087</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.00166</izz>
+          </inertia>
+        </inertial>
         <collision name="collision">
           <geometry>
             <box>
-              <size>1 1 0.1</size>
+              <size>0.1 0.1 0.02</size>
             </box>
           </geometry>
-          <surface>
-            <!-- <friction>
-              <ode>
-                <mu>0.1</mu>
-                <mu2>0</mu2>
-              </ode>
-            </friction> -->
-          </surface>
         </collision>
       </link>
-      <joint name="roofJoint" type="fixed">
+      <joint name="anchor_joint" type="fixed">
         <parent>world</parent>
-        <child>roof</child>
+        <child>anchor</child>
       </joint>
+
+      <!-- SPHERE 1 -->
       <link name="sphere_1">
-        <pose>0 0 0.93 0 0 0</pose>
+        <pose>0 0 1.93 0 0 0</pose>
         <enable_wind>true</enable_wind>
+        <inertial>
+          <mass>0.0005</mass>
+          <inertia>
+            <ixx>5.0e-5</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>5.0e-5</iyy>
+            <iyz>0.0</iyz>
+            <izz>5.0e-5</izz>
+          </inertia>
+        </inertial>
         <collision name="collision">
           <geometry>
             <sphere>
@@ -47,13 +67,37 @@
           </material>
         </visual>
       </link>
-      <joint name="sphere_1_joint" type="ball">
-        <parent>roof</parent>
+      <joint name="sphere_1_joint" type="universal">
+        <parent>anchor</parent>
         <child>sphere_1</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis>
+        <axis2>
+          <xyz>0 1 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis2>
+        
       </joint>
+
+      <!-- SPHERE 2 -->
       <link name="sphere_2">
-        <pose>0 0 0.89 0 0 0</pose>
+        <pose>0 0 1.89 0 0 0</pose>
         <enable_wind>true</enable_wind>
+        <inertial>
+          <mass>0.0005</mass>
+          <inertia>
+            <ixx>5.0e-5</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>5.0e-5</iyy>
+            <iyz>0.0</iyz>
+            <izz>5.0e-5</izz>
+          </inertia>
+        </inertial>
         <collision name="collision">
           <geometry>
             <sphere>
@@ -74,13 +118,37 @@
           </material>
         </visual>
       </link>
-      <joint name="sphere_2_joint" type="ball">
+      <joint name="sphere_2_joint" type="universal">
         <parent>sphere_1</parent>
         <child>sphere_2</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis>
+        <axis2>
+          <xyz>0 1 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis2>
+        
       </joint>
+
+      <!-- SPHERE 3 -->
       <link name="sphere_3">
-        <pose>0 0 0.85 0 0 0</pose>
+        <pose>0 0 1.85 0 0 0</pose>
         <enable_wind>true</enable_wind>
+        <inertial>
+          <mass>0.0005</mass>
+          <inertia>
+            <ixx>5.0e-5</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>5.0e-5</iyy>
+            <iyz>0.0</iyz>
+            <izz>5.0e-5</izz>
+          </inertia>
+        </inertial>
         <collision name="collision">
           <geometry>
             <sphere>
@@ -101,13 +169,37 @@
           </material>
         </visual>
       </link>
-      <joint name="sphere_3_joint" type="ball">
+      <joint name="sphere_3_joint" type="universal">
         <parent>sphere_2</parent>
         <child>sphere_3</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis>
+        <axis2>
+          <xyz>0 1 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis2>
+        
       </joint>
+
+      <!-- SPHERE 4 -->
       <link name="sphere_4">
-        <pose>0 0 0.81 0 0 0</pose>
+        <pose>0 0 1.81 0 0 0</pose>
         <enable_wind>true</enable_wind>
+        <inertial>
+          <mass>0.0005</mass>
+          <inertia>
+            <ixx>5.0e-5</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>5.0e-5</iyy>
+            <iyz>0.0</iyz>
+            <izz>5.0e-5</izz>
+          </inertia>
+        </inertial>
         <collision name="collision">
           <geometry>
             <sphere>
@@ -128,13 +220,37 @@
           </material>
         </visual>
       </link>
-      <joint name="sphere_4_joint" type="ball">
+      <joint name="sphere_4_joint" type="universal">
         <parent>sphere_3</parent>
         <child>sphere_4</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis>
+        <axis2>
+          <xyz>0 1 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis2>
+        
       </joint>
+
+      <!-- SPHERE 5 -->
       <link name="sphere_5">
-        <pose>0 0 0.77 0 0 0</pose>
+        <pose>0 0 1.77 0 0 0</pose>
         <enable_wind>true</enable_wind>
+        <inertial>
+          <mass>0.0005</mass>
+          <inertia>
+            <ixx>5.0e-5</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>5.0e-5</iyy>
+            <iyz>0.0</iyz>
+            <izz>5.0e-5</izz>
+          </inertia>
+        </inertial>
         <collision name="collision">
           <geometry>
             <sphere>
@@ -155,144 +271,20 @@
           </material>
         </visual>
       </link>
-      <joint name="sphere_5_joint" type="ball">
+      <joint name="sphere_5_joint" type="universal">
         <parent>sphere_4</parent>
         <child>sphere_5</child>
-      </joint>
-      <link name="sphere_6">
-        <pose>0 0 0.73 0 0 0</pose>
-        <enable_wind>true</enable_wind>
-        <collision name="collision">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>1.0 0 0 1.0</ambient>
-            <diffuse>.421 0.225 0.0 1.0</diffuse>
-            <specular>1.0 0 0 1.0</specular>
-          </material>
-        </visual>
-      </link>
-      <joint name="sphere_6_joint" type="ball">
-        <parent>sphere_5</parent>
-        <child>sphere_6</child>
-      </joint>
-      <link name="sphere_7">
-        <pose>0 0 0.69 0 0 0</pose>
-        <enable_wind>true</enable_wind>
-        <collision name="collision">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>1.0 0 0 1.0</ambient>
-            <diffuse>.421 0.225 0.0 1.0</diffuse>
-            <specular>1.0 0 0 1.0</specular>
-          </material>
-        </visual>
-      </link>
-      <joint name="sphere_7_joint" type="ball">
-        <parent>sphere_6</parent>
-        <child>sphere_7</child>
-      </joint>
-      <link name="sphere_8">
-        <pose>0 0 0.65 0 0 0</pose>
-        <enable_wind>true</enable_wind>
-        <collision name="collision">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>1.0 0 0 1.0</ambient>
-            <diffuse>.421 0.225 0.0 1.0</diffuse>
-            <specular>1.0 0 0 1.0</specular>
-          </material>
-        </visual>
-      </link>
-      <joint name="sphere_8_joint" type="ball">
-        <parent>sphere_7</parent>
-        <child>sphere_8</child>
-      </joint>
-      <link name="sphere_9">
-        <pose>0 0 0.61 0 0 0</pose>
-        <enable_wind>true</enable_wind>
-        <collision name="collision">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>1.0 0 0 1.0</ambient>
-            <diffuse>.421 0.225 0.0 1.0</diffuse>
-            <specular>1.0 0 0 1.0</specular>
-          </material>
-        </visual>
-      </link>
-      <joint name="sphere_9_joint" type="ball">
-        <parent>sphere_8</parent>
-        <child>sphere_9</child>
-      </joint>
-      <link name="sphere_10">
-        <pose>0 0 0.57 0 0 0</pose>
-        <enable_wind>true</enable_wind>
-        <collision name="collision">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>1.0 0 0 1.0</ambient>
-            <diffuse>.421 0.225 0.0 1.0</diffuse>
-            <specular>1.0 0 0 1.0</specular>
-          </material>
-        </visual>
-      </link>
-      <joint name="sphere_10_joint" type="ball">
-        <parent>sphere_9</parent>
-        <child>sphere_10</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis>
+        <axis2>
+          <xyz>0 1 0</xyz>
+          <limit><lower>-1.5</lower><upper>1.5</upper></limit>
+          
+        </axis2>
+        
       </joint>
     </model>
 </sdf>

@@ -1,0 +1,18 @@
+[0.035s] Invoking command in '/home/fizzer/my_robot_ws/src/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/src/install/my_robot_description
+[0.457s] -- The C compiler identification is GNU 13.3.0
+[0.517s] -- The CXX compiler identification is GNU 13.3.0
+[0.564s] -- Detecting C compiler ABI info
+[0.773s] -- Detecting C compiler ABI info - done
+[0.804s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.804s] -- Detecting C compile features
+[0.805s] -- Detecting C compile features - done
+[0.824s] -- Detecting CXX compiler ABI info
+[1.058s] -- Detecting CXX compiler ABI info - done
+[1.076s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.076s] -- Detecting CXX compile features
+[1.077s] -- Detecting CXX compile features - done
+[1.111s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.633s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.494s] -- Configuring done (2.4s)
+[2.497s] -- Generating done (0.0s)
+[2.498s] -- Build files have been written to: /home/fizzer/my_robot_ws/src/build/my_robot_description

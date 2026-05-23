@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="clueboard_5">
+        <static>true</static>
+        <link name="clueboard_link">
+            <collision name='collision'>
+                <pose>0 0 0.04 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.2 0.01 0.16</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.2 0.01 0.16</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>0 0 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>0 0.5 0 0</specular>
+                    <emissive>0 0 0 1</emissive>
+                </material>
+            </visual>
+        </link>
+        <link name="banner_link">
+            <pose>0 0.01 0.02 0 0 0</pose>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>1e-6 1e-6 1e-6</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.15 1e-4 0.1</size>
+                    </box>
+                </geometry>
+                
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+
+                    <pbr>
+                        <metal>
+                            <albedo_map>banners/banner_5.jpg</albedo_map>
+                        </metal>
+                    </pbr>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>
+        

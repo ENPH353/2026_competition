@@ -1,0 +1,18 @@
+[0.015s] Invoking command in '/home/fizzer/my_robot_ws/src/build/my_robot_bringup': AMENT_PREFIX_PATH=/home/fizzer/my_robot_ws/src/install/my_robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fizzer/my_robot_ws/src/install/my_robot_description:/home/fizzer/my_robot_ws/install/my_robot_bringup:/home/fizzer/my_robot_ws/install/my_robot_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/my_robot_bringup -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/src/install/my_robot_bringup
+[0.141s] -- The C compiler identification is GNU 13.3.0
+[0.255s] -- The CXX compiler identification is GNU 13.3.0
+[0.283s] -- Detecting C compiler ABI info
+[0.496s] -- Detecting C compiler ABI info - done
+[0.528s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.528s] -- Detecting C compile features
+[0.528s] -- Detecting C compile features - done
+[0.557s] -- Detecting CXX compiler ABI info
+[0.772s] -- Detecting CXX compiler ABI info - done
+[0.803s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.804s] -- Detecting CXX compile features
+[0.806s] -- Detecting CXX compile features - done
+[0.822s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.237s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.570s] -- Configuring done (1.5s)
+[1.575s] -- Generating done (0.0s)
+[1.579s] -- Build files have been written to: /home/fizzer/my_robot_ws/src/build/my_robot_bringup

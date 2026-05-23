@@ -1,0 +1,21 @@
+[0.387s] Invoking command in '/home/fizzer/my_robot_ws/src/build/custom_plugins': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/custom_plugins -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/src/install/custom_plugins
+[0.430s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.937s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[0.937s]   By not providing "Findrclpp.cmake" in CMAKE_MODULE_PATH this project has
+[0.937s]   asked CMake to find a package configuration file provided by "rclpp", but
+[0.937s]   CMake did not find one.
+[0.938s] 
+[0.938s]   Could not find a package configuration file provided by "rclpp" with any of
+[0.938s]   the following names:
+[0.938s] 
+[0.938s]     rclppConfig.cmake
+[0.938s]     rclpp-config.cmake
+[0.938s] 
+[0.938s]   Add the installation prefix of "rclpp" to CMAKE_PREFIX_PATH or set
+[0.939s]   "rclpp_DIR" to a directory containing one of the above files.  If "rclpp"
+[0.939s]   provides a separate development package or SDK, be sure it has been
+[0.939s]   installed.
+[0.940s] 
+[0.940s] [0m
+[0.940s] -- Configuring incomplete, errors occurred!
+[0.944s] Invoked command in '/home/fizzer/my_robot_ws/src/build/custom_plugins' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/custom_plugins -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/src/install/custom_plugins

@@ -1,5 +1,6 @@
-import os
+import sys
 
+from pathlib import Path
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription
@@ -11,29 +12,34 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     # Retrieving directory paths
-    my_robot_desc_dir = get_package_share_directory('my_robot_description')
-    my_robot_bringup_dir = get_package_share_directory('my_robot_bringup')
-    ros_gz_sim_dir = get_package_share_directory('ros_gz_sim')
+    my_robot_desc_dir = Path(get_package_share_directory('my_robot_description'))
+    my_robot_bringup_dir = Path(get_package_share_directory('my_robot_bringup'))
+    ros_gz_sim_dir = Path(get_package_share_directory('ros_gz_sim'))
 
     # Joining the directory paths with the specific files I want
-    urdf_path = os.path.join(my_robot_desc_dir, 'urdf', 'my_robot.urdf.xacro')
-    sdf_path = os.path.join(my_robot_bringup_dir, 'world', 'fast_empty.sdf')
-    test_sign_path = os.path.join(my_robot_bringup_dir, 'world/models/clue_board', 'clue_board.sdf')
-    gazebo_config_path = os.path.join(my_robot_bringup_dir, 'config', 'gazebo_bridge.yaml')
-    world_path = os.path.join(my_robot_bringup_dir, 'world')
+    urdf_path = my_robot_desc_dir / 'urdf' / 'my_robot.urdf.xacro'
+    sdf_path = my_robot_bringup_dir / 'world' / 'fast_empty.sdf'
+    gazebo_config_path = my_robot_bringup_dir / 'config' / 'gazebo_bridge.yaml'
+    world_path = my_robot_bringup_dir / 'world'
+
+    clueboard_generator_path = world_path / "clueboard_scripts"
+    
+    if clueboard_generator_path.as_posix() not in sys.path:
+        sys.path.append(clueboard_generator_path.as_posix())
+    import clueboard_generator
 
     # Setting the resource folder to let me use model:// prefix within it
     set_env = AppendEnvironmentVariable(
         'GZ_SIM_RESOURCE_PATH',
-        world_path
+        world_path.as_posix()
     )
 
     # Booting up Gazebo Harmonic with the fast world .sdf file
     gz_sim = IncludeLaunchDescription( 
         PythonLaunchDescriptionSource(
-            os.path.join(ros_gz_sim_dir, 'launch', 'gz_sim.launch.py')
+            (ros_gz_sim_dir / 'launch' / 'gz_sim.launch.py').as_posix() # Adding .as_posix() converts the path type objects to string
         ),
-        launch_arguments={'gz_args': [sdf_path, ' -r']}.items()
+        launch_arguments={'gz_args': [sdf_path.as_posix(), ' -r']}.items()
     )
 
     # Setting up the robot state publisher node
@@ -42,7 +48,17 @@ def generate_launch_description():
         executable='robot_state_publisher',
         output='screen',
         parameters=[{
-            'robot_description': Command(['xacro ', urdf_path])
+            'robot_description': Command(['xacro ', urdf_path.as_posix()])
+        }]
+    )
+
+     # ROS2 to Gazebo translation node
+    gz_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        output='screen',
+        parameters=[{
+            'config_file': gazebo_config_path.as_posix()
         }]
     )
 
@@ -60,16 +76,16 @@ def generate_launch_description():
 
     # Spawning in the signs
     num_signs = 8
-    sign_poses = [[1, 0, 0, 0],
-                  [1.1, 0, 0, 0],
-                  [1.2, 0, 0, 0],
-                  [1.3, 0, 0, 0],
-                  [1.4, 0, 0, 0],
-                  [1.5, 0, 0, 0],
-                  [1.6, 0, 0, 0],
-                  [1.7, 0, 0, 0]]
+    sign_poses = [[-5.81, -1.64, 0.04, 3.14],
+                  [-5.16, 1.35, 0.04, 3.14],
+                  [-4.0, 1.67, 0.04, 1.57],
+                  [-0.83, 0.54, 0.04, 0],
+                  [-0.83, -1.5, 0.04, 3.14],
+                  [3.41, -1.71, 0.04, 1.57],
+                  [3.8, 2.01, 0.04, -1.57],
+                  [0.9, 1.2, 1.86, -1.57]]
     
-    
+    clueboard_paths = clueboard_generator.main()
     
     for i in range(num_signs):
 
@@ -84,7 +100,7 @@ def generate_launch_description():
             executable='create',
             output='screen',
             arguments=['-name', sign_name,
-                '-file', test_sign_path,
+                '-file', clueboard_paths[i],
                 '-x', sign_x,
                 '-y', sign_y,
                 '-z', sign_z,
@@ -92,17 +108,6 @@ def generate_launch_description():
         )
 
         ld.add_action(gz_spawn_signs)
-        
-
-    # ROS2 to Gazebo translation node
-    gz_bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        output='screen',
-        parameters=[{
-            'config_file': gazebo_config_path
-        }]
-    )
 
     # NPC nodes
     truck_mover = Node(  
