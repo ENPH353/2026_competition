@@ -388,6 +388,38 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: \
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/PrintConfig.hh \
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Types.hh \
  /opt/ros/jazzy/opt/gz_utils_vendor/include/gz/utils2/gz/utils/NeverDestroyed.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/Node.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/AdvertiseOptions.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/Export.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/detail/Export.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/NodeOptions.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/NodeShared.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/HandlerStorage.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TransportTypes.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/Publisher.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/discovery.pb.h \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/discovery.pb.h \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/RepHandler.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/Uuid.hh \
+ /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/ReqHandler.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/SubscriptionHandler.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/Factory.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/config.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/MessageFactory.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/detail/dynamic_message_cast.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/MessageInfo.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/SubscribeOptions.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TopicStorage.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TopicStatistics.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/statistic.pb.h \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/statistic.pb.h \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TopicUtils.hh \
+ /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/detail/Node.hh \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/empty.pb.h \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/empty.pb.h \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/int32.pb.h \
+ /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/int32.pb.h \
  /opt/ros/jazzy/opt/gz_plugin_vendor/include/gz/plugin2/gz/plugin/Register.hh \
  /opt/ros/jazzy/opt/gz_plugin_vendor/include/gz/plugin2/gz/plugin/detail/Register.hh \
  /opt/ros/jazzy/opt/gz_plugin_vendor/include/gz/plugin2/gz/plugin/Info.hh \
@@ -597,8 +629,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/spherical_coordinates.pb.h \
  /opt/ros/jazzy/opt/gz_math_vendor/include/gz/math7/gz/math/SphericalCoordinates.hh \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/convert/StdTypes.hh \
- /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/int32.pb.h \
- /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/int32.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/int64.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/int64.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/uint32.pb.h \
@@ -606,8 +636,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/uint64.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/uint64.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/convert/DiscoveryType.hh \
- /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/discovery.pb.h \
- /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/discovery.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/convert/FuelMetadata.hh \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/fuel_metadata.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/fuel_metadata.pb.h \
@@ -627,6 +655,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/pointcloud_packed.pb.h \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/pointcloud_packed.pb.h \
  /usr/include/c++/13/cstdarg \
- /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/config.hh \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/detail/PointCloudPackedUtils.hh \
- /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Pose.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Pose.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/PoseCmd.hh

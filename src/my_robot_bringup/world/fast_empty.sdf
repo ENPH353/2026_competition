@@ -23,21 +23,11 @@
       name="gz::sim::systems::SceneBroadcaster">
     </plugin>
 
-    <!-- <plugin
-      filename="libsimulation_reset_plugin.so"
-      name="simulation_reset_plugin::SimResetPlugin">
-    </plugin> -->
-
     <!-- Enabling camera feeds globally -->
     <plugin
       filename="gz-sim-sensors-system"
       name="gz::sim::systems::Sensors">
-      <!-- TODO: look into whether ogre2 can be optimized for
-      lower compute requirements for rendering -->
       <render_engine>ogre</render_engine>
-    </plugin>
-
-    <plugin filename="gz-sim-apply-link-wrench-system" name="gz::sim::systems::ApplyLinkWrench">
     </plugin>
 
     <!-- Wind plugin -->
@@ -64,15 +54,14 @@
       </horizontal>
     </plugin>
 
-    <plugin 
-      filename="libResetSimPlugin.so" 
-      name="reset_plugin::ResetSimPlugin">
-    </plugin>
-
-
     <wind>
       <linear_velocity>0 1 0</linear_velocity> <!-- cardinal wind direction -->
     </wind>
+
+    <plugin
+      filename="libResetSimPlugin.so"
+      name="reset_plugin::ResetSimPlugin">
+    </plugin>
 
     <!-- THE KEY SECTION FOR SHADOWS -->
     <scene> 
@@ -88,45 +77,6 @@
       <specular>0.2 0.2 0.2 1</specular>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
-
-    <!-- Test block -->
-    <model name="flying_block">
-      <static>false</static>
-      <pose>-1 0 3 0 0 0</pose>
-      <enable_wind>true</enable_wind>
-
-      <link name="flying_block_link">
-        <gravity>false</gravity>
-        <inertial>
-          <mass>5.0</mass>
-          <inertia>
-            <ixx>0.000066667</ixx>
-            <ixy>0.0</ixy>
-            <ixz>0.0</ixz>
-            <iyy>0.000066667</iyy>
-            <iyz>0.0</iyz>
-            <izz>0.000066667</izz>
-          </inertia>
-        </inertial>
-
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.2 0.2 0.2</size>
-            </box>
-          </geometry>
-        </visual>
-
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.2 0.2 0.2</size>
-            </box>
-          </geometry>
-        </collision>
-
-      </link>
-    </model>
 
     <!-- WALLS START -->
     <include>

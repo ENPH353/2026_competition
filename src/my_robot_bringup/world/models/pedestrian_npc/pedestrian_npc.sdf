@@ -15,7 +15,7 @@
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose>0 0 0.06545 0 0 0</pose>
+                <pose>0 0 0.06545 0 0 1.57</pose>
                 <geometry>
                     <box>
                         <size>0.0385 0.0616 0.1309</size>
@@ -24,7 +24,7 @@
             </collision>
 
             <visual name="visual">
-                <pose>0 0 0 0 0 0</pose>
+                <pose>0 0 0 0 0 1.57</pose>
                 <geometry>
                     <mesh>
                         <uri>assets/walking.dae</uri>

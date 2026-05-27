@@ -1,4 +1,5 @@
 import sys
+import random
 
 from pathlib import Path
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
@@ -21,13 +22,14 @@ def generate_launch_description():
     urdf_path = my_robot_desc_dir / 'urdf' / 'my_robot.urdf.xacro'
     sdf_path = my_robot_bringup_dir / 'world' / 'fast_empty.sdf'
     gazebo_config_path = my_robot_bringup_dir / 'config' / 'gazebo_bridge.yaml'
+    gui_config_path = my_robot_bringup_dir / 'config' / 'keypublisher.config'
     world_path = my_robot_bringup_dir / 'world'
 
     clueboard_generator_path = world_path / "clueboard_scripts"
     
     if clueboard_generator_path.as_posix() not in sys.path:
         sys.path.append(clueboard_generator_path.as_posix())
-    import clueboard_generator
+    import clueboard_generator 
 
     # Setting the resource folder to let me use model:// prefix within it
     set_env = AppendEnvironmentVariable(
@@ -46,7 +48,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             (ros_gz_sim_dir / 'launch' / 'gz_sim.launch.py').as_posix() # Adding .as_posix() converts the path type objects to string
         ),
-        launch_arguments={'gz_args': [sdf_path.as_posix(), ' -r']}.items()
+        launch_arguments={'gz_args': [sdf_path.as_posix(), ' -r', f' --gui-config {gui_config_path.as_posix()}']}.items()
     )
 
     # Setting up the robot state publisher node
@@ -83,14 +85,15 @@ def generate_launch_description():
 
     # Spawning in the signs
     num_signs = 8
-    sign_poses = [[-5.81, -1.64, 0.04, 3.14],
-                  [-5.16, 1.35, 0.04, 3.14],
-                  [-4.0, 1.67, 0.04, 1.57],
-                  [-0.83, 0.54, 0.04, 0],
-                  [-0.83, -1.5, 0.04, 3.14],
-                  [3.41, -1.71, 0.04, 1.57],
-                  [3.8, 2.01, 0.04, -1.57],
-                  [0.9, 1.2, 1.86, -1.57]]
+    max_pitch = 0.15
+    sign_poses = [[-5.81, -1.64, 0.04, 3.14 + random.uniform(-max_pitch, max_pitch)], # First sign (fixed)
+                  [-5.16, random.uniform(1.11, 1.6), 0.04, 3.14 + random.uniform(-max_pitch, max_pitch)], # Second sign (y-varying)
+                  [-4.0, 1.67, 0.04, 1.57 + random.uniform(-max_pitch, max_pitch)], # Third sign (fixed)
+                  [-0.83, random.uniform(0.63, 0), 0.04, 0 + random.uniform(-max_pitch, max_pitch)], # Fourth sign (y-varying)
+                  [-0.83, random.uniform(-1.84, -1.44), 0.04, 3.14 + random.uniform(-max_pitch, max_pitch)], # Fifth sign (y-varying)
+                  [random.uniform(3.0, 3.41), -1.71, 0.04, 1.57 + random.uniform(-max_pitch, max_pitch)], # Sixth sign (x-varying)
+                  [3.8, 2.01, 0.04, -1.57 + random.uniform(-max_pitch, max_pitch)], # Seventh sign (fixed)
+                  [0.9, 1.2, 1.86, -1.57 + random.uniform(-max_pitch, max_pitch)]] # Eigth sign (fixed)
     
     clueboard_paths = clueboard_generator.main()
     
@@ -136,10 +139,9 @@ def generate_launch_description():
     )  
     
     ld.add_action(set_env)
+    ld.add_action(set_plugin_path)
 
     ld.add_action(gz_sim)
-
-    ld.add_action(set_plugin_path)
 
     ld.add_action(robot_state_publisher)
     ld.add_action(gz_spawn_robot)

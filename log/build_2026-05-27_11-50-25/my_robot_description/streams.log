@@ -1,0 +1,33 @@
+[0.020s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/install/my_robot_description
+[0.193s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.214s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.299s] -- Configuring done (0.3s)
+[0.303s] -- Generating done (0.0s)
+[0.305s] -- Build files have been written to: /home/fizzer/my_robot_ws/build/my_robot_description
+[0.320s] Invoked command in '/home/fizzer/my_robot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fizzer/my_robot_ws/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/fizzer/my_robot_ws/install/my_robot_description
+[0.321s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/my_robot_description -- -j4 -l4
+[0.353s] Invoked command in '/home/fizzer/my_robot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/my_robot_description -- -j4 -l4
+[0.354s] Invoking command in '/home/fizzer/my_robot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fizzer/my_robot_ws/build/my_robot_description
+[0.361s] -- Install configuration: ""
+[0.362s] -- Execute custom install script
+[0.362s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//urdf/common_properties.xacro
+[0.362s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//urdf/mobile_base_gazebo.xacro
+[0.363s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//urdf/my_robot.urdf.xacro
+[0.363s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//rviz/urdf_config.rviz
+[0.363s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description//launch/display.launch.xml
+[0.363s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/ament_index/resource_index/package_run_dependencies/my_robot_description
+[0.363s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/ament_index/resource_index/parent_prefix_path/my_robot_description
+[0.363s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/environment/ament_prefix_path.sh
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/environment/ament_prefix_path.dsv
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/environment/path.sh
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/environment/path.dsv
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/local_setup.bash
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/local_setup.sh
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/local_setup.zsh
+[0.364s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/local_setup.dsv
+[0.365s] -- Symlinking: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/package.dsv
+[0.372s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/ament_index/resource_index/packages/my_robot_description
+[0.372s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/cmake/my_robot_descriptionConfig.cmake
+[0.373s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/cmake/my_robot_descriptionConfig-version.cmake
+[0.373s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/my_robot_description/share/my_robot_description/package.xml
+[0.375s] Invoked command in '/home/fizzer/my_robot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fizzer/my_robot_ws/build/my_robot_description

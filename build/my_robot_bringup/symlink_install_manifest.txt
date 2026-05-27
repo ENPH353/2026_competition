@@ -1,6 +1,7 @@
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot.launch.py
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot.launch.xml
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//config/gazebo_bridge.yaml
+/home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//config/keypublisher.config
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/clueboard_scripts/clue_banner.png
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/clueboard_scripts/clueboard_generator.py
 /home/fizzer/my_robot_ws/install/my_robot_bringup/share/my_robot_bringup//world/fast_empty.sdf
