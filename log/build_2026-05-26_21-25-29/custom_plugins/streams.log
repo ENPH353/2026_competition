@@ -1,0 +1,30 @@
+[0.009s] Invoking command in '/home/fizzer/my_robot_ws/build/custom_plugins': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/custom_plugins -- -j4 -l4
+[0.069s] [ 50%] [32mBuilding CXX object CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o[0m
+[2.029s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:[m[K In member function ‘[01m[Kvirtual void reset_plugin::ResetSimPlugin::[01;32m[KReset[m[K(const gz::sim::v8::UpdateInfo&, gz::sim::v8::EntityComponentManager&)[m[K’:
+[2.029s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:12:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[K_info[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.029s]    12 | void ResetSimPlugin::Reset([01;35m[Kconst gz::sim::UpdateInfo &_info[m[K, gz::sim::EntityComponentManager &_ecm)
+[2.029s]       |                            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[3.426s] [100%] [32m[1mLinking CXX shared library libResetSimPlugin.so[0m
+[3.591s] [100%] Built target ResetSimPlugin
+[3.603s] Invoked command in '/home/fizzer/my_robot_ws/build/custom_plugins' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/custom_plugins -- -j4 -l4
+[3.610s] Invoking command in '/home/fizzer/my_robot_ws/build/custom_plugins': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fizzer/my_robot_ws/build/custom_plugins
+[3.616s] -- Install configuration: ""
+[3.616s] -- Execute custom install script
+[3.617s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/lib/libResetSimPlugin.so
+[3.618s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/include/custom_plugins/ResetSimPlugin.hh
+[3.618s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/ament_index/resource_index/package_run_dependencies/custom_plugins
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/ament_index/resource_index/parent_prefix_path/custom_plugins
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/ament_prefix_path.sh
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/ament_prefix_path.dsv
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/path.sh
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/path.dsv
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.bash
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.sh
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.zsh
+[3.619s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.dsv
+[3.620s] -- Symlinking: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/package.dsv
+[3.626s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/ament_index/resource_index/packages/custom_plugins
+[3.626s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/cmake/custom_pluginsConfig.cmake
+[3.626s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/cmake/custom_pluginsConfig-version.cmake
+[3.626s] -- Up-to-date symlink: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/package.xml
+[3.628s] Invoked command in '/home/fizzer/my_robot_ws/build/custom_plugins' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fizzer/my_robot_ws/build/custom_plugins

@@ -1,7 +1,7 @@
 import sys
 
 from pathlib import Path
-from ament_index_python.packages import get_package_share_directory
+from ament_index_python.packages import get_package_share_directory, get_package_prefix
 from launch import LaunchDescription
 from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -15,6 +15,7 @@ def generate_launch_description():
     my_robot_desc_dir = Path(get_package_share_directory('my_robot_description'))
     my_robot_bringup_dir = Path(get_package_share_directory('my_robot_bringup'))
     ros_gz_sim_dir = Path(get_package_share_directory('ros_gz_sim'))
+    custom_plugins_path = Path(get_package_prefix('custom_plugins')) / 'lib'
 
     # Joining the directory paths with the specific files I want
     urdf_path = my_robot_desc_dir / 'urdf' / 'my_robot.urdf.xacro'
@@ -34,6 +35,12 @@ def generate_launch_description():
         world_path.as_posix()
     )
 
+    # Loading in plugin path
+    set_plugin_path = AppendEnvironmentVariable(
+        'GZ_SIM_SYSTEM_PLUGIN_PATH',
+        (custom_plugins_path).as_posix()
+    )
+    
     # Booting up Gazebo Harmonic with the fast world .sdf file
     gz_sim = IncludeLaunchDescription( 
         PythonLaunchDescriptionSource(
@@ -131,6 +138,8 @@ def generate_launch_description():
     ld.add_action(set_env)
 
     ld.add_action(gz_sim)
+
+    ld.add_action(set_plugin_path)
 
     ld.add_action(robot_state_publisher)
     ld.add_action(gz_spawn_robot)

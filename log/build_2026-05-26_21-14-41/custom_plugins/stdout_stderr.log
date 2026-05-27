@@ -1,0 +1,16 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o[0m
+[01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:[m[K In member function ‘[01m[Kvirtual void reset_plugin::ResetSimPlugin::[01;32m[KReset[m[K(const gz::sim::v8::UpdateInfo&, gz::sim::v8::EntityComponentManager&)[m[K’:
+[01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:27:63:[m[K [01;31m[Kerror: [m[K‘[01m[Kmy_robot_name[m[K’ was not declared in this scope
+   27 |       gzmsg << "[ResetSimPlugin] SUCCESS: Found robot '" << [01;31m[Kmy_robot_name[m[K << "' at Entity ID: " << robot_entity << std::endl;
+      |                                                             [01;31m[K^~~~~~~~~~~~~[m[K
+
+[01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:43:80:[m[K [01;31m[Kerror: [m[K‘[01m[Kmy_robot_name[m[K’ was not declared in this scope
+   43 | ResetSimPlugin] FAILURE: Could not find a model named '" << [01;31m[Kmy_robot_name[m[K << "' in the database!" << std::endl;
+      |                                                             [01;31m[K^~~~~~~~~~~~~[m[K
+
+[01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:12:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[K_info[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   12 | void ResetSimPlugin::Reset([01;35m[Kconst gz::sim::UpdateInfo &_info[m[K, gz::sim::EntityComponentManager &_ecm)
+      |                            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+gmake[2]: *** [CMakeFiles/ResetSimPlugin.dir/build.make:76: CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ResetSimPlugin.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,24 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o[0m
+[100%] [32m[1mLinking CXX shared library libResetSimPlugin.so[0m
+[100%] Built target ResetSimPlugin
+-- Install configuration: ""
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/lib/libResetSimPlugin.so
+-- Set non-toolchain portion of runtime path of "/home/fizzer/my_robot_ws/install/custom_plugins/lib/libResetSimPlugin.so" to ""
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/include
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/include/custom_plugins
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/include/custom_plugins/ResetSimPlugin.hh
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/ament_index/resource_index/package_run_dependencies/custom_plugins
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/ament_index/resource_index/parent_prefix_path/custom_plugins
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/ament_prefix_path.sh
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/ament_prefix_path.dsv
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/path.sh
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/environment/path.dsv
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.bash
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.sh
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.zsh
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/local_setup.dsv
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/package.dsv
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/ament_index/resource_index/packages/custom_plugins
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/cmake/custom_pluginsConfig.cmake
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/cmake/custom_pluginsConfig-version.cmake
+-- Installing: /home/fizzer/my_robot_ws/install/custom_plugins/share/custom_plugins/package.xml

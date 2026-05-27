@@ -23,10 +23,10 @@
       name="gz::sim::systems::SceneBroadcaster">
     </plugin>
 
-    <plugin
+    <!-- <plugin
       filename="libsimulation_reset_plugin.so"
       name="simulation_reset_plugin::SimResetPlugin">
-    </plugin>
+    </plugin> -->
 
     <!-- Enabling camera feeds globally -->
     <plugin
@@ -62,6 +62,11 @@
           </sin>
         </direction>
       </horizontal>
+    </plugin>
+
+    <plugin 
+      filename="libResetSimPlugin.so" 
+      name="reset_plugin::ResetSimPlugin">
     </plugin>
 
 

@@ -4,3 +4,6 @@ source;share/bringup_nodes/hook/pythonpath.sh
 source;share/bringup_nodes/hook/ament_prefix_path.ps1
 source;share/bringup_nodes/hook/ament_prefix_path.dsv
 source;share/bringup_nodes/hook/ament_prefix_path.sh
+source;../../build/bringup_nodes/share/bringup_nodes/hook/pythonpath_develop.ps1
+source;../../build/bringup_nodes/share/bringup_nodes/hook/pythonpath_develop.dsv
+source;../../build/bringup_nodes/share/bringup_nodes/hook/pythonpath_develop.sh
