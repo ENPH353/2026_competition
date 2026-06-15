@@ -1,0 +1,28 @@
+[0.198s] Invoking command in '/home/fizzer/my_robot_ws/build/custom_plugins': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/home/fizzer/gym_gazebo_ws/install/linefollow_RL:/home/fizzer/gym_gazebo_ws/install/cartpole_RL:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(gym-gazebo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(gym-gazebo) /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/custom_plugins -- -j4 -l4
+[0.253s] [ 50%] [32mBuilding CXX object CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o[0m
+[2.485s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:[m[K In member function ‘[01m[Kvirtual void reset_plugin::ResetSimPlugin::[01;32m[KPreUpdate[m[K(const gz::sim::v8::UpdateInfo&, gz::sim::v8::EntityComponentManager&)[m[K’:
+[2.486s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:48:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass reset_plugin::ResetSimPlugin[m[K’ has no member named ‘[01m[Kmemory_locked[m[K’
+[2.486s]    48 |     if (!this->[01;31m[Kmemory_locked[m[K)
+[2.486s]       |                [01;31m[K^~~~~~~~~~~~~[m[K
+[2.486s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:[m[K In lambda function:
+[2.486s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:57:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass reset_plugin::ResetSimPlugin[m[K’ has no member named ‘[01m[Kinitial_poses[m[K’
+[2.486s]    57 |                 if (this->[01;31m[Kinitial_poses[m[K.find(_modelEntity) == this->initial_poses.end())
+[2.486s]       |                           [01;31m[K^~~~~~~~~~~~~[m[K
+[2.486s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:57:69:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass reset_plugin::ResetSimPlugin[m[K’ has no member named ‘[01m[Kinitial_poses[m[K’
+[2.486s]    57 |         if (this->initial_poses.find(_modelEntity) == this->[01;31m[Kinitial_poses[m[K.end())
+[2.486s]       |                                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[2.486s] 
+[2.486s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:64:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass reset_plugin::ResetSimPlugin[m[K’ has no member named ‘[01m[Kinitial_poses[m[K’
+[2.486s]    64 |                         this->[01;31m[Kinitial_poses[m[K[_modelEntity] = _poseComp->Data();
+[2.486s]       |                               [01;31m[K^~~~~~~~~~~~~[m[K
+[2.486s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:73:78:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass reset_plugin::ResetSimPlugin[m[K’ has no member named ‘[01m[Kinitial_poses[m[K’
+[2.486s]    73 |    double distance = _poseComp->Data().Pos().Distance(this->[01;31m[Kinitial_poses[m[K[_modelEntity].Pos());
+[2.486s]       |                                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[2.486s] 
+[2.487s] [01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:78:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass reset_plugin::ResetSimPlugin[m[K’ has no member named ‘[01m[Kmemory_locked[m[K’
+[2.487s]    78 |                         this->[01;31m[Kmemory_locked[m[K = true; // LOCK THE MEMORY BANK
+[2.487s]       |                               [01;31m[K^~~~~~~~~~~~~[m[K
+[3.482s] gmake[2]: *** [CMakeFiles/ResetSimPlugin.dir/build.make:76: CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o] Error 1
+[3.483s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ResetSimPlugin.dir/all] Error 2
+[3.483s] gmake: *** [Makefile:146: all] Error 2
+[3.486s] Invoked command in '/home/fizzer/my_robot_ws/build/custom_plugins' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fizzer/my_robot_ws/install/bringup_nodes:/home/fizzer/gym_gazebo_ws/install/linefollow_RL:/home/fizzer/gym_gazebo_ws/install/cartpole_RL:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(gym-gazebo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(gym-gazebo) /usr/bin/cmake --build /home/fizzer/my_robot_ws/build/custom_plugins -- -j4 -l4

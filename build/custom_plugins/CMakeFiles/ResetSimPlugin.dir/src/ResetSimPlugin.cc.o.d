@@ -657,4 +657,11 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: \
  /usr/include/c++/13/cstdarg \
  /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/detail/PointCloudPackedUtils.hh \
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Pose.hh \
- /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/PoseCmd.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/PoseCmd.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/World.hh \
+ /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/World.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Joint.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/ParentEntity.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointPositionReset.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointVelocityReset.hh \
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Static.hh

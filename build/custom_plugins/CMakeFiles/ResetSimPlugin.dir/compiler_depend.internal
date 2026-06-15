@@ -262,11 +262,17 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/Types.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Component.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Factory.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Joint.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointPositionReset.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointVelocityReset.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Model.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Name.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/ParentEntity.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Pose.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/PoseCmd.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Serialization.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Static.hh
+ /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/World.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/config.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/detail/BaseView.hh
  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/detail/EntityComponentManager.hh
@@ -345,6 +351,7 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Sensor.hh
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Sky.hh
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Types.hh
+ /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/World.hh
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/config.hh
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/detail/Export.hh
  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/parser.hh

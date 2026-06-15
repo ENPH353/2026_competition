@@ -1,0 +1,23 @@
+[0.699s] Invoking command in '/home/fizzer/my_robot_ws/src/bringup_nodes': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(gym-gazebo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(gym-gazebo) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bringup_nodes build --build-base /home/fizzer/my_robot_ws/build/bringup_nodes/build install --record /home/fizzer/my_robot_ws/build/bringup_nodes/install.log --single-version-externally-managed install_data
+[0.918s] running egg_info
+[0.935s] writing ../../build/bringup_nodes/bringup_nodes.egg-info/PKG-INFO
+[0.936s] writing dependency_links to ../../build/bringup_nodes/bringup_nodes.egg-info/dependency_links.txt
+[0.936s] writing entry points to ../../build/bringup_nodes/bringup_nodes.egg-info/entry_points.txt
+[0.937s] writing requirements to ../../build/bringup_nodes/bringup_nodes.egg-info/requires.txt
+[0.937s] writing top-level names to ../../build/bringup_nodes/bringup_nodes.egg-info/top_level.txt
+[0.970s] reading manifest file '../../build/bringup_nodes/bringup_nodes.egg-info/SOURCES.txt'
+[0.970s] writing manifest file '../../build/bringup_nodes/bringup_nodes.egg-info/SOURCES.txt'
+[0.971s] running build
+[0.971s] running build_py
+[0.971s] running install
+[0.976s] running install_lib
+[0.996s] running install_data
+[0.996s] running install_egg_info
+[1.013s] removing '/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup_nodes-0.0.0-py3.12.egg-info' (and everything under it)
+[1.015s] Copying ../../build/bringup_nodes/bringup_nodes.egg-info to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages/bringup_nodes-0.0.0-py3.12.egg-info
+[1.016s] running install_scripts
+[1.123s] Installing move_pedestrian script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[1.124s] Installing move_truck script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[1.124s] Installing move_yoda script to /home/fizzer/my_robot_ws/install/bringup_nodes/lib/bringup_nodes
+[1.124s] writing list of installed files to '/home/fizzer/my_robot_ws/build/bringup_nodes/install.log'
+[1.150s] Invoked command in '/home/fizzer/my_robot_ws/src/bringup_nodes' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(gym-gazebo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/fizzer/my_robot_ws/build/bringup_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fizzer/my_robot_ws/install/bringup_nodes/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(gym-gazebo) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bringup_nodes build --build-base /home/fizzer/my_robot_ws/build/bringup_nodes/build install --record /home/fizzer/my_robot_ws/build/bringup_nodes/install.log --single-version-externally-managed install_data

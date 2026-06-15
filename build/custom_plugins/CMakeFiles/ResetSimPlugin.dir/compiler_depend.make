@@ -261,11 +261,17 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/Types.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Component.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Factory.hh \
+  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Joint.hh \
+  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointPositionReset.hh \
+  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointVelocityReset.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Model.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Name.hh \
+  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/ParentEntity.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Pose.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/PoseCmd.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Serialization.hh \
+  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Static.hh \
+  /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/World.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/config.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/detail/BaseView.hh \
   /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/detail/EntityComponentManager.hh \
@@ -344,6 +350,7 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
   /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Sensor.hh \
   /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Sky.hh \
   /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Types.hh \
+  /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/World.hh \
   /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/config.hh \
   /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/detail/Export.hh \
   /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/parser.hh \
@@ -930,6 +937,22 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /usr/include/c++/13/typeinfo:
 
+/usr/include/google/protobuf/arena.h:
+
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
+
+/usr/include/c++/13/tr1/special_function_util.h:
+
+/usr/include/c++/13/tr1/poly_laguerre.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/c++/13/tr1/poly_hermite.tcc:
+
+/usr/include/c++/13/tr1/modified_bessel_func.tcc:
+
+/usr/include/c++/13/tr1/legendre_function.tcc:
+
 /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h:
 
 /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/Export.hh:
@@ -997,8 +1020,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/plugin.pb.h:
-
-/opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/planegeom.pb.h:
 
 /usr/include/c++/13/list:
 
@@ -1079,10 +1100,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/double.pb.h:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/visual.pb.h:
-
-/usr/include/google/protobuf/arena.h:
-
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/MessageFactory.hh:
 
@@ -1202,10 +1219,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/boxgeom.pb.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/c++/13/tr1/poly_hermite.tcc:
-
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/double.pb.h:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/entity.pb.h:
@@ -1294,8 +1307,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/image.pb.h:
 
-/opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/lens.pb.h:
-
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/projector.pb.h:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/model.pb.h:
@@ -1364,6 +1375,12 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /usr/include/c++/13/bits/charconv.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/c++/13/tuple:
+
+/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Exception.hh:
+
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/pointcloud_packed.pb.h:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/boolean.pb.h:
@@ -1383,6 +1400,10 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 /opt/ros/jazzy/opt/gz_math_vendor/include/gz/math7/gz/math/detail/Export.hh:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/details/conegeom.pb.h:
+
+/opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/planegeom.pb.h:
+
+/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Static.hh:
 
 /usr/include/c++/13/bits/invoke.h:
 
@@ -1646,7 +1667,29 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Factory.hh:
 
+/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/Joint.hh:
+
+/opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TopicStatistics.hh:
+
+/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/parser.hh:
+
+/usr/include/c++/13/condition_variable:
+
+/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointPositionReset.hh:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/13/deque:
+
+/opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/lens.pb.h:
+
+/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/JointVelocityReset.hh:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
 /usr/include/c++/13/bits/quoted_string.h:
+
+/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/ParentEntity.hh:
 
 /usr/include/c++/13/bits/postypes.h:
 
@@ -1682,12 +1725,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /usr/include/c++/13/optional:
 
-/opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TopicStatistics.hh:
-
-/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/parser.hh:
-
-/usr/include/c++/13/condition_variable:
-
 /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/TopicStorage.hh:
 
 /opt/ros/jazzy/opt/gz_msgs_vendor/include/gz/msgs10/gz/msgs/light.pb.h:
@@ -1709,8 +1746,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 /usr/include/c++/13/mutex:
 
 /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/parameters/Interface.hh:
-
-/usr/include/c++/13/tr1/modified_bessel_func.tcc:
 
 /opt/ros/jazzy/opt/gz_transport_vendor/include/gz/transport13/gz/transport/parameters/detail/Export.hh:
 
@@ -1838,6 +1873,8 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Types.hh:
 
+/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/World.hh:
+
 /opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/config.hh:
 
 /usr/include/c++/13/bits/stl_vector.h:
@@ -1960,12 +1997,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /usr/include/c++/13/bits/nested_exception.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Exception.hh:
-
-/usr/include/c++/13/tuple:
-
 /usr/include/c++/13/bits/locale_classes.h:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
@@ -1977,8 +2008,6 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
 
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
@@ -2116,9 +2145,7 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 
 /usr/include/c++/13/debug/assertions.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/13/deque:
+/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/components/World.hh:
 
 /usr/include/c++/13/exception:
 
@@ -2177,9 +2204,3 @@ CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o: /home/fizzer/my_robot_ws/
 /usr/include/c++/13/tr1/exp_integral.tcc:
 
 /usr/include/c++/13/tr1/gamma.tcc:
-
-/usr/include/c++/13/tr1/legendre_function.tcc:
-
-/usr/include/c++/13/tr1/special_function_util.h:
-
-/usr/include/c++/13/tr1/poly_laguerre.tcc:
