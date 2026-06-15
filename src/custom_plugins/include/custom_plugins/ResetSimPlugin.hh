@@ -37,8 +37,13 @@ class ResetSimPlugin :
             // Creation of a node for the plugin that will subscribe to the keypress topic
             gz::transport::Node node;
 
-            bool memory_locked = false;
+            // THE STARTUP LOCK
+            bool startup_memorized = false;
+            int settling_counter = 0;
 
+            // THE MEMORY BANK
+            std::unordered_map<gz::sim::Entity, gz::math::Pose3d> initial_poses;
+            
             // A thread-safe flag to tell the physics thread to teleport the robot
             std::atomic<bool> teleport_requested{false};
     };

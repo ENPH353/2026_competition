@@ -45,65 +45,80 @@ void ResetSimPlugin::OnKeyPress(const gz::msgs::Int32 &_msg)
 
 void ResetSimPlugin::PreUpdate(const gz::sim::UpdateInfo &/*_info*/, gz::sim::EntityComponentManager &_ecm)
 {   
-    if (!this->memory_locked)
+    // ====================================================================
+    // PHASE 1: THE STARTUP SNAPSHOT (Runs only at the very beginning)
+    // ====================================================================
+    if (!this->startup_memorized)
     {
-        _ecm.Each<gz::sim::components::Model, gz::sim::components::Pose, gz::sim::components::Name>(
-            [&](const gz::sim::Entity &_modelEntity,
-                const gz::sim::components::Model *,
-                const gz::sim::components::Pose *_poseComp,
-                const gz::sim::components::Name *_nameComp) -> bool
-            {
-                // 1. Is this a NEW robot we haven't seen yet?
-                if (this->initial_poses.find(_modelEntity) == this->initial_poses.end())
-                {
-                    const auto *staticComp = _ecm.Component<gz::sim::components::Static>(_modelEntity);
-                    bool is_static = staticComp ? staticComp->Data() : false;
+        bool found_dynamic_model = false;
 
-                    if (!is_static) 
-                    {
-                        this->initial_poses[_modelEntity] = _poseComp->Data();
-                        gzerr << "[ResetSimPlugin] Memorized initial spawn pose for: " 
-                              << _nameComp->Data() << std::endl;
-                    }
-                }
-                // 2. We ALREADY memorized this robot. Let's check if it started moving.
-                else 
-                {
-                    // Calculate the distance between its current pose and its spawn pose
-                    double distance = _poseComp->Data().Pos().Distance(this->initial_poses[_modelEntity].Pos());
-                    
-                    // If it moved more than 5 cm (0.05 meters)...
-                    if (distance > 0.05) 
-                    {
-                        this->memory_locked = true; // LOCK THE MEMORY BANK
-                        gzerr << "[ResetSimPlugin] Agent movement detected! Memory bank permanently locked to save CPU." << std::endl;
-                        
-                        return false; // Returning false breaks us out of the ECM.Each loop early!
-                    }
-                }
-                return true; // Keep checking other models
+        // 1. Check if any dynamic models have successfully spawned yet
+        _ecm.Each<gz::sim::components::Model>(
+            [&](const gz::sim::Entity &_modelEntity,
+                const gz::sim::components::Model *) -> bool
+            {
+                const auto *staticComp = _ecm.Component<gz::sim::components::Static>(_modelEntity);
+                bool is_static = staticComp ? staticComp->Data() : false;
+
+                if (!is_static) found_dynamic_model = true;
+                return true; 
             });
+
+        // 2. If they exist, let gravity settle them for 100 physics frames
+        if (found_dynamic_model)
+        {
+            this->settling_counter++;
+
+            // Wait ~0.1 seconds for collision meshes to relax into the floor
+            if (this->settling_counter >= 100) 
+            {
+                // 3. Take the permanent snapshot!
+                _ecm.Each<gz::sim::components::Model, gz::sim::components::Pose, gz::sim::components::Name>(
+                    [&](const gz::sim::Entity &_modelEntity,
+                        const gz::sim::components::Model *,
+                        const gz::sim::components::Pose *_poseComp,
+                        const gz::sim::components::Name *_nameComp) -> bool
+                    {
+                        const auto *staticComp = _ecm.Component<gz::sim::components::Static>(_modelEntity);
+                        bool is_static = staticComp ? staticComp->Data() : false;
+
+                        if (!is_static)
+                        {
+                            this->initial_poses[_modelEntity] = _poseComp->Data();
+                            gzerr << "[ResetSimPlugin] Startup snapshot saved for: " 
+                                  << _nameComp->Data() << std::endl;
+                        }
+                        return true;
+                    });
+
+                // 4. Lock the system forever
+                this->startup_memorized = true;
+                gzerr << "[ResetSimPlugin] Startup sequence complete. Memory locked." << std::endl;
+            }
+        }
+        
+        // Do not process any keyboard resets while the simulation is still setting up
+        this->teleport_requested = false;
+        return; 
     }
-    
-    if (!this->teleport_requested)
-    {
-        return;
-    }
+
+    // ====================================================================
+    // PHASE 2: THE RESETTER (Only runs if teleport is requested)
+    // ====================================================================
+    if (!this->teleport_requested) return;
 
     bool found_something_to_reset = false;
 
-    // Loop through our memory bank of dynamic robots
     for (auto const& [robot_entity, original_pose] : this->initial_poses)
     {
-        // Double-check the entity still exists in the world (wasn't deleted)
         if (_ecm.HasEntity(robot_entity))
         {
             found_something_to_reset = true;
 
-            // 1. Teleport it back to its SPECIFIC memorized pose
+            // Teleport back to the settled snapshot
             _ecm.SetComponentData<gz::sim::components::WorldPoseCmd>(robot_entity, original_pose);
 
-            // 2. Reset all joints inside this specific robot
+            // Reset joints
             _ecm.Each<gz::sim::components::Joint, gz::sim::components::ParentEntity>(
                 [&](const gz::sim::Entity &_jointEntity,
                     const gz::sim::components::Joint *,
@@ -120,9 +135,9 @@ void ResetSimPlugin::PreUpdate(const gz::sim::UpdateInfo &/*_info*/, gz::sim::En
     }
 
     if (found_something_to_reset) {
-        gzerr << "[ResetSimPlugin] Successfully teleported dynamic agents!" << std::endl;
+        gzerr << "[ResetSimPlugin] Successfully teleported agents to settled spawn points!" << std::endl;
     } else {
-        gzerr << "[ResetSimPlugin] Keystroke Reset Failed: No dynamic robots found!" << std::endl;
+        gzerr << "[ResetSimPlugin] Reset Failed: No dynamic models found in memory!" << std::endl;
     }
 
     this->teleport_requested = false;
