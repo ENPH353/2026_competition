@@ -1,7 +1,0 @@
-[01m[K/home/fizzer/my_robot_ws/src/custom_plugins/src/ResetSimPlugin.cc:1:10:[m[K [01;31m[Kfatal error: [m[Kmy_custom_plugins/ResetSimPlugin.hh: No such file or directory
-    1 | #include [01;31m[K"my_custom_plugins/ResetSimPlugin.hh"[m[K // Include the ResetSimPlugin header file here
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/ResetSimPlugin.dir/build.make:76: CMakeFiles/ResetSimPlugin.dir/src/ResetSimPlugin.cc.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ResetSimPlugin.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2
