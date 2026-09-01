@@ -29,7 +29,7 @@ git clone https://github.com/ENPH353/2026_competition.git
 cd ~/2026_competition_ws
 colcon build --symlink-install 
 ```
-NOTE: Ensure you have sourced the default ROS2 installation. For example:
+NOTE: If you get CMake errors ensure you have sourced the default ROS2 installation. For example:
 ```
 source /opt/ros/jazzy/setup.bash
 ```
