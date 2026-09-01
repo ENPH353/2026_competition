@@ -22,7 +22,7 @@ cd ~/competition_ws
 
 - Clone the repository inside the workspace:
 ```
-git clone https://github.com/SniperReborn/353_competition_ws.git
+git clone https://github.com/SniperReborn/353_competition.git
 ```
 - Build the ROS2 workspace using colcon with symbolic links (allows for editing files without rebuilding after every change):
 ```
