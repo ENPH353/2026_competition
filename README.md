@@ -28,6 +28,10 @@ git clone https://github.com/ENPH353/2026_competition.git
 ```
 colcon build --symlink-install 
 ```
+NOTE: Ensure you have sourced the default ROS2 installation. For example:
+```
+source /opt/ros/jazzy/setup.bash
+```
 
 ## Starting and stopping the competition
 
