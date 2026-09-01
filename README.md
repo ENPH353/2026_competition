@@ -16,8 +16,8 @@ This repository contains the following ROS2 packages within the src/ folder:
 
 - Make the ROS2 workspace folder. This folder will become the competition ROS2 workspace:
 ```
-mkdir -p ~/competition_ws
-cd ~/competition_ws
+mkdir -p ~/competition_ws/src
+cd ~/competition_ws/src
 ```
 
 - Clone the repository inside the workspace:
