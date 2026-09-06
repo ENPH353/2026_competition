@@ -16,13 +16,13 @@ This repository contains the following ROS2 packages within the src/ folder:
 
 - Make the ROS2 workspace folder. This folder will become the competition ROS2 workspace:
 ```
-mkdir -p ~/2026_competition_ws/src
-cd ~/2026_competition_ws/src
+mkdir -p ~/2026_competition_ws
+cd 2026_competition_ws
 ```
 
-- Clone the repository inside the workspace:
+- Clone the repository's contents inside the workspace:
 ```
-git clone https://github.com/ENPH353/2026_competition.git
+git clone https://github.com/ENPH353/2026_competition.git .
 ```
 - Build the ROS2 workspace using colcon with symbolic links (allows for editing files without rebuilding after every change):
 ```

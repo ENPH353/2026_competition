@@ -8,7 +8,7 @@ from rclpy.signals import SignalHandlerOptions
 
 class MovePed(Node):
     def __init__(self):
-        super().__init__('move_truck')
+        super().__init__('move_pedestrian')
         self.velocity_publisher_ = self.create_publisher(Twist, "/pedestrian/cmd_vel", 10)
         self.pose_subscriber_ = self.create_subscription(PoseStamped, "/pedestrian/pose", self.control_loop, 10)
 

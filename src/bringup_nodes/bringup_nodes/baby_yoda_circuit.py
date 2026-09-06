@@ -2,18 +2,19 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist, PoseStamped
+from gz.transport13 import Node as GzNode
+from gz.msgs10.int32_pb2 import Int32
 import math
 import time
 from rclpy.signals import SignalHandlerOptions
 
 class MoveYoda(Node):
     def __init__(self):
-        super().__init__('move_truck')
+        super().__init__('move_yoda')
         self.velocity_publisher_ = self.create_publisher(Twist, "/baby_yoda/cmd_vel", 10)
         self.pose_subscriber_ = self.create_subscription(PoseStamped, "/baby_yoda/pose", self.control_loop, 10)
 
         self.waypoints = [(4.33, -0.5), (5.0, 0), (5.25, 0.5), (4.5, 1.5), (4.33, 2.0), (4.5, 2.25), (5.0, 2.5), (5.5, 2.25), (5.75, 2.0), (5, 0)]
-
         self.linear_velocity = 0.4
         self.current_waypoint = 0
         self.last_error = 0
@@ -22,6 +23,19 @@ class MoveYoda(Node):
         self.angular_kP = 1.5
         self.angular_kD = 0.2
         self.distance_threshold = 0.1
+
+        self.gz_node = GzNode()
+        reset_topic = "keyboard/keypress"
+        success = self.gz_node.subscribe(Int32, reset_topic, self.reset_callback)
+        if not success:
+            self.get_logger().error(f"Failed to subscribe to Gazebo topic {reset_topic}")
+
+    def reset_callback(self, msg: Int32):
+        # Extract the integer value directly from msg.data
+        if msg.data == 114 or msg.data == 82:  # ASCII 'r' or 'R'
+            self.get_logger().info("Reset key 'r' received! Resetting node state...")
+            self.current_waypoint = 0
+            self.last_error = 0
 
     def get_orientation(self, q):
         siny_cosp = 2 * (q.w * q.z + q.x * q.y)
