@@ -61,7 +61,7 @@ def generate_launch_description():
         }]
     )
 
-     # ROS2 to Gazebo translation node
+    # ROS2 to Gazebo translation node
     gz_bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
