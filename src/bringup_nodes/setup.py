@@ -15,7 +15,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='fizzer',
-    maintainer_email='taigasery78@gmail.com',
+    maintainer_email='miti@phas.ubc.ca',
     description='TODO: Package description',
     license='TODO: License declaration',
     extras_require={

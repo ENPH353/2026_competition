@@ -22,7 +22,9 @@ import sys
 
 NUM_LOCATIONS = 8
 UI_TIMER_FREQ_MS = 500
-ROUND_DURATION_s = 20#240
+ROUND_DURATION_s = 240
+
+SCRIPT_FILE_PATH = os.path.dirname(os.path.realpath(__file__))
 
 class RosWorker(QThread):
     '''
@@ -92,6 +94,9 @@ class RosWorker(QThread):
 
    
     def stop(self):
+        '''
+        @brief hook to stop the thread elegantly
+        '''
         self.requestInterruption()
         self.wait()
 
@@ -100,15 +105,15 @@ class Window(QtWidgets.QMainWindow):
     '''
     '''
 
-    def __init__(self):
+    def __init__(self, clues_file_path):
         '''
         '''
         super(Window, self).__init__()
 
-        script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.clues_file_path = clues_file_path
 
         # Register the UI elements in Python
-        loadUi(script_dir + "/score_tracker.ui", self)
+        loadUi(SCRIPT_FILE_PATH + "/score_tracker.ui", self)
 
         # Add logo
         pixmap = QPixmap('FIZZ_CLUE.svg')
@@ -131,9 +136,7 @@ class Window(QtWidgets.QMainWindow):
 
         # Populate table contents
         # @sa plate_generator.py: this is where the plates.csv is generated
-        LICENSE_PLATE_FILE = '/plates.csv'
-        SCRIPT_FILE_PATH = os.path.dirname(os.path.realpath(__file__))
-        with open(SCRIPT_FILE_PATH + LICENSE_PLATE_FILE, "r") as plate_file:
+        with open(self.clues_file_path, "r") as plate_file:
             platereader = csv.reader(plate_file)
             i=0
             for row in platereader:
@@ -367,7 +370,7 @@ class Window(QtWidgets.QMainWindow):
         
         self.elapsed_real_time_s = 0
         self.sim_start_time_s = self.get_sim_time()
-        
+
         self.elapsed_time_value_QL.setText(
             "{:03d} sec".format(self.elapsed_real_time_s))
         
@@ -509,8 +512,15 @@ Clue: BANDIT: {bandit}"""
 def main():
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+    if len(sys.argv) > 1:
+        clues_file_path = sys.argv[1]
+        print(f"The clues_file_path is: {clues_file_path}")
+    else:
+        print("Score Tracker started with no arguments. Exiting.")
+        return
+
     app = QtWidgets.QApplication(sys.argv)
-    window = Window()
+    window = Window(clues_file_path)
     window.show()
 
     sys.exit(app.exec_())

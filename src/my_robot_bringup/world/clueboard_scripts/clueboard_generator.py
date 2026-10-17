@@ -1,12 +1,15 @@
-import numpy as np
+import csv
 import cv2
+import numpy as np
+import requests
 import shutil
-from pathlib import Path
 
+from pathlib import Path
 from PIL import Image, ImageFont, ImageDraw
 
 def quick_clear(path, file_type):
-    
+    '''
+    '''
     if path.exists() and path.is_dir():
         deleted_count = 0
         
@@ -20,9 +23,62 @@ def quick_clear(path, file_type):
     else:
         path.mkdir() # If no path is found, make new one
         print(f"Directory not found. Created empty folder at: {path}")
+
+
+def loadCrimesProfileCompetition(script_folder_path):
+    '''
+    @brief returns a set of clues for one game and save them to plates.csv
+
+    @retval clue dictionary of the form 
+                [size:value, victim:value, ...
+                 crime:value,time:value,
+                 place:value,motive:value,
+                 weapon:value,bandit:value]
+    '''
+    URL = "https://phas.ubc.ca/~miti/ENPH353/ENPH353Clues.csv"
+
+    print("Loading clues ...")
+    response = None
+    try:
+        response = requests.get(URL, timeout=2)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        # This will catch HTTPError, ConnectionError, Timeout, etc.
+        print(f"The request failed: {e}")
+
+    if response is None:
+        print("Could not download clues. Using default clues!")
+        key_list = ["SIZE", "CRIME", "PLACE", "WEAPON", 
+                    "VICTIM", "TIME", "MOTIVE", "BANDIT",]
+        value_list = ["D 3", "D SPIN", "D HALLWAY", "D WHEEL",
+                      "D ELECTRONS", "D BIG BANG", "D NEGATIVITY", "D PROTON"]
+    else:
+        raw = response.text.split('\n')
+        key_list   = raw[0].split(',')
+        value_list = raw[1].split(',')
+
+    print("### CLUES USED: ")
+    # We save the clues to clues.csv
+    with open(script_folder_path / "clues.csv", 'w') as plates_file:
+        csvwriter = csv.writer(plates_file)
+
+        for (key, value) in zip(key_list, value_list):
+            csvwriter.writerow([key, value.upper()])
+            print(key.upper() + ":" + value.upper())
+
+    #We put the clues and values in a list to be displayed on the boards
+    clues = [[key.upper(), value.upper()] for key, value in zip(key_list, value_list)]
+
+    return clues
         
 
 def banner_generator(script_dir, num_signs):
+    '''
+    @brief
+    '''
+
+    # Download clues from website:
+
     output_path = script_dir.parent / 'models' / 'clue_board' / 'banners'
     base_banner_path = script_dir.parent / "clueboard_scripts" / "clue_banner.png"
     
@@ -32,14 +88,7 @@ def banner_generator(script_dir, num_signs):
 
     banner = cv2.imread(base_banner_path.as_posix())
 
-    text = [["SIZE", "3"],
-            ["CRIME", "3"],
-            ["PLACE", "3"],
-            ["WEAPON", "3"],
-            ["VICTIM", "3"],
-            ["TIME", "3"],
-            ["MOTIVE", "3"],
-            ["BANDIT", "3"]]
+    text = loadCrimesProfileCompetition(script_dir.parent)
 
     # Generate the images with text
     for i in range(num_signs):
@@ -59,6 +108,8 @@ def banner_generator(script_dir, num_signs):
         cv2.imwrite(str(output_path / jpg_name), populated_banner)
 
 def sdf_generator(script_dir, num_signs):
+    '''
+    '''
     output_path = script_dir.parent / 'models' / 'clue_board'
 
     quick_clear(output_path, ".sdf")

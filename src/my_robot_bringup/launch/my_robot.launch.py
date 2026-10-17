@@ -28,6 +28,7 @@ def generate_launch_description():
     world_path = my_robot_bringup_dir / 'world'
 
     clueboard_generator_path = world_path / "clueboard_scripts"
+    clueboard_csv = world_path / "clues.csv"
     
     if clueboard_generator_path.as_posix() not in sys.path:
         sys.path.append(clueboard_generator_path.as_posix())
@@ -141,7 +142,7 @@ def generate_launch_description():
     ) 
 
     start_score_tracker = ExecuteProcess(
-        cmd=[bringup_nodes_dir / 'score_tracker.py'],
+        cmd=[bringup_nodes_dir / 'score_tracker.py', clueboard_csv.as_posix()],
         output='screen'
     ) 
     
