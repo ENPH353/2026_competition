@@ -5,8 +5,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import (QPixmap)
 from PyQt5.QtCore import (Qt, QTimer, pyqtSignal, QThread)
 
-from std_msgs.msg import String
 from geometry_msgs.msg import Twist
+from rosgraph_msgs.msg import Clock
+from std_msgs.msg import String
 
 from python_qt_binding import loadUi
 from rclpy.node import Node
@@ -22,10 +23,12 @@ NUM_LOCATIONS = 8
 
 class RosWorker(QThread):
     '''
-    Separate thread that allows us to have rclpy spin_once and app.exec() 
-    running at the same time.
+    @brief Separate thread that allows us to have rclpy spin_once() and 
+           app.exec() running at the same time.
     '''
     message_received_signal = pyqtSignal(str)
+    twist_received_signal = pyqtSignal(float, float)
+    sim_clock_signal = pyqtSignal(float)
 
     def __init__(self):
         super().__init__()
@@ -33,14 +36,24 @@ class RosWorker(QThread):
 
 
     def run(self):
+        '''
+        @brief Create the ROS2 node, connect its subscribers and start the 
+               thread.
+        '''
         rclpy.init()
         self.node = Node('ROS_score_tracker_node')
 
         # Set-up ROS subscribers
+        # score tracker messages (clue boards and start/stop timer)
         self.node.create_subscription(String, "score_tracker", 
-                                      self.score_tracker_callback, 1)
+                                      self.callback_score_tracker, 1)
+        # cmd_vel to ensure the agent doesn't start driving before timer is 
+        # started
         self.node.create_subscription(Twist, "/R1/cmd_vel",
-                                      self.cmd_vel_callback, 1)
+                                      self.callback_cmd_vel, 1)
+        # clock for using the simulation time
+        self.node.create_subscription(Clock, '/clock',
+                                      self.callback_clock, 1)
 
         # Start spinning the thread
         while rclpy.ok() and not self.isInterruptionRequested():
@@ -48,26 +61,32 @@ class RosWorker(QThread):
 
         self.node.destroy_node()
         rclpy.shutdown()
-        
 
-    def score_tracker_callback(self, data):
+
+    def callback_clock(self, msg: Clock):
         '''
-        Use the callback to emit a signal. This is how we translate from ROS to
-        Qt events. (ROS event -> subscriber callback -> Qt Signal -> Qt Slot)
+        @brief Emits a signal with the current sim time which is buffered in 
+               the Qt app class.
+        '''
+        self.sim_clock_signal.emit(msg.clock)
+
+
+    def callback_cmd_vel(self, data):
+        '''
+        @brief Used to log that the car has started moving.
+        '''
+        self.twist_received_signal.emit(data.linear.x, data.angular.z)
+
+
+    def callback_score_tracker(self, data):
+        '''
+        @brief Use the callback to emit a signal. This is how we translate 
+               from ROS to Qt events. 
+               (ROS event -> subscriber callback -> Qt Signal -> Qt Slot)
         '''
         self.message_received_signal.emit(str(data.data))
 
-
-    def cmd_vel_callback(self, data):
-        '''
-        Used to log that the car has started moving.
-        '''
-        print("cmd_vel received")
-        # if self.first_cmd_vel:
-        #     self.log_msg("First command velocity received.")
-        #     self.first_cmd_vel = False
-
-    
+   
     def stop(self):
         self.requestInterruption()
         self.wait()
@@ -146,20 +165,24 @@ class Window(QtWidgets.QMainWindow):
 
         self.bonus_completed_QPB.clicked.connect(self.SLOT_bonus_completed)
 
-        self.ros2_thread.message_received_signal.connect(self.SLOT_message_received)
+        # ROS2 related slots
+        self.ros2_thread.message_received_signal.connect(self.SLOT_received_message)
+        self.ros2_thread.twist_received_signal.connect(self.SLOT_received_cmd_vel)
+        self.ros2_thread.sim_clock_signal.connect(self.SLOT_received_sim_time)
 
         self.ros2_thread.start()
 
 
     def get_sim_time(self):
         '''
-        @brief Getter for sim time - updated every 100ms through a SLOT
+        @brief Getter for sim time - updated by the SLOT_received_sim_tim()
         '''
-        return 100
+        return self.sim_clock_s
     
 
     def log_msg(self, message):
         '''
+        @brief appends message to the log Qt widget.
         '''
         now = datetime.now()
         date_time = now.strftime("%H:%M:%S.%f")[:-3]
@@ -186,13 +209,24 @@ class Window(QtWidgets.QMainWindow):
 
     def SLOT_predictions_changed(self):
         '''
+        @brief catch all prediction changed slot
         '''
         self.update_predictions_total()
 
 
-    def SLOT_message_received(self, prediction_string):
+    def SLOT_received_cmd_vel(self):
         '''
-        @brief Processes the reported data
+        @brief Used to log that the car has started moving.
+        '''
+        if self.first_cmd_vel:
+            self.log_msg("First command velocity received.")
+            self.first_cmd_vel = False
+
+
+    def SLOT_received_message(self, prediction_string):
+        '''
+        @brief Processes the reported data. Updates reported clue boards and 
+               starts and stops the timer.
         '''
         self.log_msg("Message received: {}".format(prediction_string))
 
@@ -251,6 +285,13 @@ class Window(QtWidgets.QMainWindow):
         self.log_msg("Awarded: {} pts".format(points_awarded))
 
 
+    def SLOT_received_sim_time(self, sim_time):
+        '''
+        @brief buffers sim time
+        '''
+        self.sim_clock_s = sim_time.sec + (sim_time.nanosec / 1e9)
+
+
     def SLOT_penalties_changed(self):
         self.update_penalty_total()
 
@@ -289,19 +330,31 @@ class Window(QtWidgets.QMainWindow):
 
 
     def SLOT_timer_update(self):
+        '''
+        Updates the UI timer to show the simulation time.
+        '''
         ROUND_DURATION_s = 240
-        self.elapsed_time_s += 1
+
+        self.elapsed_real_time_s += 1
+
         self.sim_current_time_s = self.get_sim_time()
-        sim_time_s = self.sim_current_time_s - self.sim_start_time_s
+        elapsed_sim_time_s = self.sim_current_time_s - self.sim_start_time_s
+
+        # Update the UI
         self.elapsed_time_value_QL.setText(
-            "{:03d} sec".format(int(sim_time_s)))
-        if (sim_time_s > ROUND_DURATION_s):
+            "{:03d} sec".format(int(elapsed_sim_time_s)))
+
+        # Check if we are over time and stop the round if we are.
+        if (elapsed_sim_time_s > ROUND_DURATION_s):
             self.log_msg("Out of time: {}sec sim time (real time: {}sec).".
-                format(sim_time_s, self.elapsed_time_s))
+                format(elapsed_sim_time_s, self.elapsed_real_time_s))
             self.timer.stop()
 
 
     def start_timer(self):
+        '''
+        @brief 
+        '''
         self.elapsed_time_s = 0
         self.sim_start_time_s = self.get_sim_time()
         self.elapsed_time_value_QL.setText(

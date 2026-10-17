@@ -148,7 +148,7 @@ def generate_launch_description():
     ld.add_action(gz_bridge)
     
     ld.add_action(truck_mover)
-    ld.add_action(yoda_mover) 
-    ld.add_action(pedestrian_mover)  
+    ld.add_action(yoda_mover)
+    ld.add_action(pedestrian_mover)
     
     return ld
