@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from datetime import datetime
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import (QPixmap)
 from PyQt5.QtCore import (Qt, QTimer, pyqtSignal, QThread)
@@ -20,6 +21,8 @@ import signal
 import sys
 
 NUM_LOCATIONS = 8
+UI_TIMER_FREQ_MS = 500
+ROUND_DURATION_s = 20#240
 
 class RosWorker(QThread):
     '''
@@ -68,7 +71,8 @@ class RosWorker(QThread):
         @brief Emits a signal with the current sim time which is buffered in 
                the Qt app class.
         '''
-        self.sim_clock_signal.emit(msg.clock)
+        sim_time_s = msg.clock.sec + (msg.clock.nanosec / 1e9)
+        self.sim_clock_signal.emit(sim_time_s)
 
 
     def callback_cmd_vel(self, data):
@@ -101,8 +105,10 @@ class Window(QtWidgets.QMainWindow):
         '''
         super(Window, self).__init__()
 
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+
         # Register the UI elements in Python
-        loadUi("./score_tracker.ui", self)
+        loadUi(script_dir + "/score_tracker.ui", self)
 
         # Add logo
         pixmap = QPixmap('FIZZ_CLUE.svg')
@@ -142,7 +148,7 @@ class Window(QtWidgets.QMainWindow):
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.SLOT_timer_update)
         self.timerStarted = False
-        self.elapsed_time_s = 0
+        self.elapsed_real_time_s = 0
 
         # Initialize other variables:
         self.bonus_points = 0
@@ -285,11 +291,11 @@ class Window(QtWidgets.QMainWindow):
         self.log_msg("Awarded: {} pts".format(points_awarded))
 
 
-    def SLOT_received_sim_time(self, sim_time):
+    def SLOT_received_sim_time(self, sim_time_s):
         '''
         @brief buffers sim time
         '''
-        self.sim_clock_s = sim_time.sec + (sim_time.nanosec / 1e9)
+        self.sim_clock_s = sim_time_s
 
 
     def SLOT_penalties_changed(self):
@@ -333,9 +339,7 @@ class Window(QtWidgets.QMainWindow):
         '''
         Updates the UI timer to show the simulation time.
         '''
-        ROUND_DURATION_s = 240
-
-        self.elapsed_real_time_s += 1
+        self.elapsed_real_time_s += UI_TIMER_FREQ_MS / 1000
 
         self.sim_current_time_s = self.get_sim_time()
         elapsed_sim_time_s = self.sim_current_time_s - self.sim_start_time_s
@@ -348,27 +352,34 @@ class Window(QtWidgets.QMainWindow):
         if (elapsed_sim_time_s > ROUND_DURATION_s):
             self.log_msg("Out of time: {}sec sim time (real time: {}sec).".
                 format(elapsed_sim_time_s, self.elapsed_real_time_s))
-            self.timer.stop()
+            self.stop_timer()
 
 
     def start_timer(self):
         '''
-        @brief 
+        @brief reset elapsed time and start Qt timer to update textbox of 
+               the UI timer.
         '''
-        self.elapsed_time_s = 0
+        if (self.timerStarted):
+            self.log_msg("Timer already started. You have to stop before " \
+                         "restarting.")
+            return
+        
+        self.elapsed_real_time_s = 0
         self.sim_start_time_s = self.get_sim_time()
+        
         self.elapsed_time_value_QL.setText(
-            "{:03d} sec".format(self.elapsed_time_s))
-        self.timer.start(1000)
+            "{:03d} sec".format(self.elapsed_real_time_s))
+        
+        self.timer.start(UI_TIMER_FREQ_MS)
         self.timerStarted = True
         self.log_msg("Timer started.")
 
 
     def stop_timer(self):
         '''
-        Stop the timer if it was started.
+        @brief stop the timer if it was started and trigger the story line
         '''
-
         # If timer has not started yet
         if not self.timerStarted:
             self.log_msg("Careful there detective the timer is not active yet.\
@@ -378,7 +389,7 @@ class Window(QtWidgets.QMainWindow):
         self.sim_current_time_s = self.get_sim_time()
         sim_time_s = self.sim_current_time_s - self.sim_start_time_s
         self.log_msg("Timer stopped: {:.2f} sec sim time (real time: {}sec).".
-                format(sim_time_s, self.elapsed_time_s))
+                format(sim_time_s, self.elapsed_real_time_s))
         self.timer.stop()
         self.timerStarted = False
 
@@ -386,6 +397,9 @@ class Window(QtWidgets.QMainWindow):
 
 
     def update_predictions_total(self):
+        '''
+        @brief recalculate the score for all predictions
+        '''
         predictionsTotal = 0
         for i in range(NUM_LOCATIONS):
             predictionsTotal += int(self.predictions_scores_QTW.item(i, 4).text())
@@ -396,6 +410,9 @@ class Window(QtWidgets.QMainWindow):
 
 
     def update_penalty_total(self):
+        '''
+        @brief recalculate the penalty score
+        '''
         self.penalties_scores_QTW.blockSignals(True)
 
         #update collision penalties total:
@@ -427,7 +444,8 @@ class Window(QtWidgets.QMainWindow):
 
     def update_points_total(self):
         '''
-        Total all the prediction, penalties and bonus points
+        @brief calculate the total score: all the prediction, penalties and 
+               bonus points
         '''
         predictTotal = int(self.predictions_total_value_QL.text())
         penaltyTotal = int(self.penalties_total_value_QL.text())
@@ -439,8 +457,9 @@ class Window(QtWidgets.QMainWindow):
 
     def update_story_line(self):
         '''
-        Using OpenAi's API come up with a story for the crime.
+        @brief Using OpenAi's API come up with a story for the crime.
         '''
+        self.log_msg("Updating story ...")
         return
     
         # 2026-03-18 MI: This section is no longer working after OpenAi updated
@@ -487,7 +506,7 @@ Clue: BANDIT: {bandit}"""
         self.story_line_value_QTE.append(story)
 
 
-if __name__ == "__main__":
+def main():
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     app = QtWidgets.QApplication(sys.argv)
@@ -495,3 +514,6 @@ if __name__ == "__main__":
     window.show()
 
     sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()

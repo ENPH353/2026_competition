@@ -8,6 +8,7 @@ from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command
 from launch_ros.actions import Node
+from launch.actions import ExecuteProcess
 
 def generate_launch_description():  
     ld = LaunchDescription()
@@ -15,6 +16,7 @@ def generate_launch_description():
     # Retrieving directory paths
     my_robot_desc_dir = Path(get_package_share_directory('my_robot_description'))
     my_robot_bringup_dir = Path(get_package_share_directory('my_robot_bringup'))
+    bringup_nodes_dir = Path(get_package_share_directory('bringup_nodes'))
     ros_gz_sim_dir = Path(get_package_share_directory('ros_gz_sim'))
     custom_plugins_path = Path(get_package_prefix('custom_plugins')) / 'lib'
 
@@ -34,7 +36,7 @@ def generate_launch_description():
     # Setting the resource folder to let me use model:// prefix within it
     set_env = AppendEnvironmentVariable(
         'GZ_SIM_RESOURCE_PATH',
-        world_path.as_posix()
+        world_path.as_posix() 
     )
 
     # Loading in plugin path
@@ -136,7 +138,12 @@ def generate_launch_description():
         package="bringup_nodes", 
         executable="move_pedestrian",
         output='screen' 
-    )  
+    ) 
+
+    start_score_tracker = ExecuteProcess(
+        cmd=[bringup_nodes_dir / 'score_tracker.py'],
+        output='screen'
+    ) 
     
     ld.add_action(set_env)
     ld.add_action(set_plugin_path)
@@ -150,5 +157,7 @@ def generate_launch_description():
     ld.add_action(truck_mover)
     ld.add_action(yoda_mover)
     ld.add_action(pedestrian_mover)
+
+    ld.add_action(start_score_tracker)
     
     return ld
