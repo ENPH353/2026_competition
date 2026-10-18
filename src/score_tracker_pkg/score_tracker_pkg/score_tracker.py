@@ -9,9 +9,9 @@ from PyQt5.QtCore import (Qt, QTimer, pyqtSignal, QThread)
 from geometry_msgs.msg import Twist
 from rosgraph_msgs.msg import Clock
 from std_msgs.msg import String
+from rclpy.node import Node
 
 from python_qt_binding import loadUi
-from rclpy.node import Node
 
 import csv
 import os
@@ -516,7 +516,7 @@ def main():
         clues_file_path = sys.argv[1]
         print(f"The clues_file_path is: {clues_file_path}")
     else:
-        clues_file_path = "/home/fizzer/2026_competition_ws/install/world_pkg/share/world_pkg/clues.csv"
+        clues_file_path = "/home/fizzer/2026_competition_ws/install/world_pkg/share/world_pkg/world/clues.csv"
         print("[WARNING] Score Tracker started with no arguments. Using default value: " + clues_file_path)
 
     app = QtWidgets.QApplication(sys.argv)
