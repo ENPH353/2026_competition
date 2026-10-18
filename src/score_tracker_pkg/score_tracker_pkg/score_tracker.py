@@ -54,7 +54,7 @@ class RosWorker(QThread):
                                       self.callback_score_tracker, 1)
         # cmd_vel to ensure the agent doesn't start driving before timer is 
         # started
-        self.node.create_subscription(Twist, "/R1/cmd_vel",
+        self.node.create_subscription(Twist, "/cmd_vel",
                                       self.callback_cmd_vel, 1)
         # clock for using the simulation time
         self.node.create_subscription(Clock, '/clock',

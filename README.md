@@ -7,8 +7,10 @@ This repository contains the following ROS2 packages within the src/ folder:
 | :--- | :--- |
 | bringup_nodes | Contains ROS2 control script nodes for NPCs. |
 | custom_plugins | Contains a C++ Gazebo world level plugin that resets non-static entities by teleporting them back to their spawnpoints. |
-| my_robot_bringup | Describes the simulation world and its associated assets. Also contains the launch file and gazebo-to-ROS2 config files. |
+| my_robot_bringup | Contains the launch file and gazebo-to-ROS2 config files. |
 | my_robot_description | Contains a differential drive URDF robot that students can modify and control. Also contains an RViz launch file to enable viewing the robot.  |
+| score_tracker_pkg | Contains the clue board score tracking system |
+| world_pkg | Describes the simulation world and its associated assets. |
 
 ## Setup instructions
 
