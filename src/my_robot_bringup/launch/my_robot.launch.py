@@ -14,25 +14,26 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     # Retrieving directory paths
+    custom_plugins_path = Path(get_package_prefix('custom_plugins')) / 'lib'
     my_robot_desc_dir = Path(get_package_share_directory('my_robot_description'))
     my_robot_bringup_dir = Path(get_package_share_directory('my_robot_bringup'))
-    score_tracker_dir = Path(get_package_share_directory('score_tracker_pkg'))
     ros_gz_sim_dir = Path(get_package_share_directory('ros_gz_sim'))
-    custom_plugins_path = Path(get_package_prefix('custom_plugins')) / 'lib'
+    score_tracker_dir = Path(get_package_share_directory('score_tracker_pkg'))
+    world_dir = Path(get_package_share_directory('world_pkg'))
 
     # Joining the directory paths with the specific files I want
     urdf_path = my_robot_desc_dir / 'urdf' / 'my_robot.urdf.xacro'
-    sdf_path = my_robot_bringup_dir / 'world' / 'fast_empty.sdf'
     gazebo_config_path = my_robot_bringup_dir / 'config' / 'gazebo_bridge.yaml'
     gui_config_path = my_robot_bringup_dir / 'config' / 'keypublisher.config'
-    world_path = my_robot_bringup_dir / 'world'
 
+    world_path = world_dir / 'world'
+    sdf_path = world_path / 'fast_empty.sdf'
     clueboard_generator_path = world_path / "clueboard_scripts"
     clueboard_csv = world_path / "clues.csv"
     
     if clueboard_generator_path.as_posix() not in sys.path:
         sys.path.append(clueboard_generator_path.as_posix())
-    import clueboard_generator 
+    import clueboard_generator
 
     # Setting the resource folder to let me use model:// prefix within it
     set_env = AppendEnvironmentVariable(

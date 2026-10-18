@@ -516,7 +516,7 @@ def main():
         clues_file_path = sys.argv[1]
         print(f"The clues_file_path is: {clues_file_path}")
     else:
-        clues_file_path = "/home/fizzer/2026_competition_ws/install/my_robot_bringup/share/my_robot_bringup/world/clues.csv"
+        clues_file_path = "/home/fizzer/2026_competition_ws/install/world_pkg/share/world_pkg/clues.csv"
         print("[WARNING] Score Tracker started with no arguments. Using default value: " + clues_file_path)
 
     app = QtWidgets.QApplication(sys.argv)
