@@ -16,7 +16,7 @@ def generate_launch_description():
     # Retrieving directory paths
     my_robot_desc_dir = Path(get_package_share_directory('my_robot_description'))
     my_robot_bringup_dir = Path(get_package_share_directory('my_robot_bringup'))
-    bringup_nodes_dir = Path(get_package_share_directory('bringup_nodes'))
+    score_tracker_dir = Path(get_package_share_directory('score_tracker_pkg'))
     ros_gz_sim_dir = Path(get_package_share_directory('ros_gz_sim'))
     custom_plugins_path = Path(get_package_prefix('custom_plugins')) / 'lib'
 
@@ -142,7 +142,7 @@ def generate_launch_description():
     ) 
 
     start_score_tracker = ExecuteProcess(
-        cmd=[bringup_nodes_dir / 'score_tracker.py', clueboard_csv.as_posix()],
+        cmd=[score_tracker_dir / 'score_tracker.py', clueboard_csv.as_posix()],
         output='screen'
     ) 
     

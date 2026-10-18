@@ -116,7 +116,7 @@ class Window(QtWidgets.QMainWindow):
         loadUi(SCRIPT_FILE_PATH + "/score_tracker.ui", self)
 
         # Add logo
-        pixmap = QPixmap('FIZZ_CLUE.svg')
+        pixmap = QPixmap(SCRIPT_FILE_PATH + '/FIZZ_CLUE.svg')
         self.label_QL.setPixmap(pixmap)
 
         # Populate log file name
@@ -516,8 +516,8 @@ def main():
         clues_file_path = sys.argv[1]
         print(f"The clues_file_path is: {clues_file_path}")
     else:
-        print("Score Tracker started with no arguments. Exiting.")
-        return
+        clues_file_path = "/home/fizzer/2026_competition_ws/install/my_robot_bringup/share/my_robot_bringup/world/clues.csv"
+        print("[WARNING] Score Tracker started with no arguments. Using default value: " + clues_file_path)
 
     app = QtWidgets.QApplication(sys.argv)
     window = Window(clues_file_path)
