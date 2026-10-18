@@ -15,7 +15,7 @@ def generate_launch_description():
 
     # Retrieving directory paths
     custom_plugins_path = Path(get_package_prefix('custom_plugins')) / 'lib'
-    my_robot_desc_dir = Path(get_package_share_directory('my_robot_description'))
+    my_robot_desc_dir = Path(get_package_share_directory('my_robot_pkg'))
     my_robot_bringup_dir = Path(get_package_share_directory('my_robot_bringup'))
     ros_gz_sim_dir = Path(get_package_share_directory('ros_gz_sim'))
     score_tracker_dir = Path(get_package_share_directory('score_tracker_pkg'))
